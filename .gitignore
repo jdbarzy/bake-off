@@ -1,0 +1,48 @@
+# dependencies
+node_modules/
+
+# local tooling / editor
+.claude/
+.DS_Store
+*.swp
+
+# python
+__pycache__/
+*.pyc
+
+# logs / runtime
+*.log
+vllm-*.log
+
+# local ops notes / scratch
+resume.md
+
+# persisted lifetime token tally
+dashboard/lifetime.json
+dashboard/datasets.json
+
+# user's own endpoint overrides (bring your own infrastructure); see models.config.example.json
+dashboard/models.config.json
+
+# hot-swap gateway keys (local only, never commit)
+dashboard/gateway.json
+
+# local runtime config (host names, ports) - portable template is run.config.example.sh
+run.config.sh
+
+# transient public URL from the online-hosting supervisor
+cloudflared-url.txt
+
+# mwboot output (per-machine, embeds a LAN IP)
+mwboot-llmbench.json
+dashboard/lineups.config.json
+dashboard/presets.config.json
+dashboard/settings.config.json
+dashboard/machines.config.json
+dashboard/catalog.config.json
+.ocr-venv/
+dashboard/enrollments.json
+dashboard/library.json
+dashboard/tls/
+dashboard/docsets/funsd-forms/   # FUNSD is research-use licensed: local docset, never shipped
+dashboard/docsets/funsd-forms/

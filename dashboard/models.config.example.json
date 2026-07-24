@@ -1,0 +1,29 @@
+{
+  "_comment": "Bring your own infrastructure. Copy this file to models.config.json (same folder) to point the three benchmark slots at your own model servers, then restart the dashboard. You can also edit and save these from inside the app (open a model's dots menu in the warm-up lineup). 'kind' is either 'ollama' or 'openai' (any OpenAI-compatible server, e.g. vLLM, llama.cpp, LM Studio). The three 'key' values are fixed slot ids - keep them; change the rest.",
+  "models": [
+    {
+      "key": "slot-a",
+      "label": "llama3.2:3b",
+      "system": "This computer",
+      "kind": "ollama",
+      "base": "http://localhost:11434",
+      "model": "llama3.2:3b"
+    },
+    {
+      "key": "slot-b",
+      "label": "Llama 3.1 8B",
+      "system": "gpu-box-1",
+      "kind": "openai",
+      "base": "http://gpu-box-1:8000/v1",
+      "model": "meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "key": "slot-c",
+      "label": "Qwen2.5 7B",
+      "system": "gpu-box-1",
+      "kind": "openai",
+      "base": "http://gpu-box-1:8001/v1",
+      "model": "Qwen/Qwen2.5-7B-Instruct"
+    }
+  ]
+}

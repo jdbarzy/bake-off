@@ -1,0 +1,15 @@
+[Unit]
+Description=mem-guard: log memory pressure and protect VSCode from the OOM killer
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/mem-guard.sh
+Restart=always
+RestartSec=3
+Nice=-5
+# Keep the guard itself off the OOM hit-list.
+OOMScoreAdjust=-800
+
+[Install]
+WantedBy=default.target

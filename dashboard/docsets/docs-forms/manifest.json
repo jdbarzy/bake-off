@@ -1,0 +1,73 @@
+{
+  "id": "docs-forms",
+  "name": "Forms & records",
+  "desc": "Filled-in forms, checkboxes, a shipping label and a stamped memo. Tests what a reader sees, not just the words.",
+  "type": "doc",
+  "suggest": 512,
+  "rows": [
+    {
+      "file": "page-1.png",
+      "label": "Form - employment application",
+      "question": "This is a scanned form or record. Extract these fields exactly as printed: Applicant name; Position applied for; Phone; Most recent employer. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Applicant name": "Dana R. Whitfield",
+        "Position applied for": "Facilities Manager",
+        "Phone": "(503) 555-0187",
+        "Most recent employer": "Cascade Facilities Services"
+      },
+      "ocr": "Employment application\nLakeshore Property Group - Human Resources\nFull name\nDana R. Whitfield\nPosition applied for\nFacilities Manager\nPhone\nDate\n(503) 555-0187\nJuly 6,2026\nMostrecentemployer\nCascadeFacilitiesServices\nAvailable to start immediately:Yes\nSignature: D. Whitfield",
+      "parse": "# Employment application\n\nLakeshore Property Group - Human Resources\n\nFull name\n\nDana R. Whitfield\n\nPosition applied for\n\nFacilities Manager\n\nPhone\n\n(503) 555-0187\n\nDate\n\nJuly 6, 2026\n\nMost recent employer\n\nCascade Facilities Services\n\nAvailable to start immediately: Yes\n\n**Signature: D. Whitfield**"
+    },
+    {
+      "file": "page-2.png",
+      "label": "Form - service request checkboxes",
+      "question": "This is a scanned form or record. Extract these fields exactly as printed: First service checked; Second service checked; Priority selected. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "First service checked": "Electrical",
+        "Second service checked": "HVAC",
+        "Priority selected": "Urgent"
+      },
+      "ocr": "Building service request\nComplete one form per location. Mark all services required.\nLocation\nWarehouseB,Mezzanine\nRequested by\nK. Osei\nServices required (check all that apply)\nElectrical\nPlumbing\nHVAC\nRoofing\nPainting\nPest control\nPriority\nRoutine\nUrgent\nEmergency",
+      "parse": "# Building service request\n\nComplete one form per location. Mark all services required.\n\nLocation\n\nWarehouse B, Mezzanine\n\nRequested by\n\nK. Osei\n\nServices required (check all that apply)\n\nElectrical\n\nPlumbing\n\nHVAC\n\nRoofing\n\nPainting\n\nPest control\n\nPriority\n\nRoutine\n\nUrgent\n\nEmergency"
+    },
+    {
+      "file": "page-3.png",
+      "label": "Shipping label (scanned)",
+      "question": "This is a scanned form or record. Extract these fields exactly as printed: Tracking number; Weight; Destination city. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Tracking number": "TRK-4415-8890-22",
+        "Weight": "12.4 kg",
+        "Destination city": "Portland"
+      },
+      "ocr": "PRIORITY 2-DAY AIR\nTracking no.\nTRK-4415-8890-22\nWeight\n12.4 kg\nService\n2-Day Air\nSHIP TO\nJuniper Analytics\n900 SW Salmon Street,Floor 6\nPortland, OR 97205",
+      "parse": "PRIORITY 2-DAY AIR\n\nTracking no.\n\nTRK-4415-8890-22\n\nWeight\n\n12.4 kg\n\nService\n\n2-Day Air\n\nSHIP TO\n\nJuniper Analytics\n\n900 SW Salmon Street, Floor 6\n\nPortland, OR 97205"
+    },
+    {
+      "file": "page-4.png",
+      "label": "Employee record card",
+      "question": "This is a scanned form or record. Extract these fields exactly as printed: Employee ID; Department; Clearance; Expiry date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee ID": "EMP-30291",
+        "Department": "Research & Development",
+        "Clearance": "Level 3",
+        "Expiry date": "February 9, 2028"
+      },
+      "ocr": "HALCYONRESEARCHGROUP\nName\nPriya Raman\nEmployee ID\nEMP-30291\nPHOTO\nDepartment\nResearch&Developmen\nClearance\nLevel3\nIssued\nFebruary 9,2026\nExpires\nFebruary 9,2028\nProperty of Halcyon Research Group. If found, return to any office.",
+      "parse": "HALCYON RESEARCH GROUP\n\n| PHOTO | Name Priya Raman Employee ID EMP-30291 Department Research | Development Clearance Level 3 |\n|---|---|---|\n| Issued Expires | February 9, 2026 February 9, 2028 |  |\n\nProperty of Halcyon Research Group. If found, return to any office."
+    },
+    {
+      "file": "page-5.png",
+      "label": "Memo with approval stamp",
+      "question": "This is a scanned form or record. Extract these fields exactly as printed: Memo subject; Memo date; Approval status; Exception deadline. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Memo subject": "Vendor consolidation plan",
+        "Memo date": "May 22, 2026",
+        "Approval status": "APPROVED",
+        "Exception deadline": "June 15, 2026"
+      },
+      "ocr": "INTERNALMEMO\nTo\nAlldepartmentheads\nFrom\nM.Adeyemi, Operations\nDate\nMay 22,2026\nSubject\nVendorconsolidationplan\nFollowing theQ1review,procurement will consolidate ourhardware\nvendorsfromninesupplierstofourby theendofQ3.Framework\nagreements are being finalized with the remaining suppliers now.\nDepartmentheadsshould submit anysole-sourceexceptions to\nprocurement by June 15, 2026. Orders placed after July 1 must use\nthe new vendor list in the purchasing portal.\nAPPROVE\nDistribution: operations,finance,facilities",
+      "parse": "INTERNAL MEMO\n\nTo  **All department heads**\n\nFrom  **M. Adeyemi, Operations**\n\nDate  **May 22, 2026**\n\nSubject  **Vendor consolidation plan**\n\nFollowing the Q1 review, procurement will consolidate our hardware vendors from nine suppliers to four by the end of Q3. Framework agreements are being finalized with the remaining suppliers now.\n\nDepartment heads should submit any sole-source exceptions to procurement by June 15, 2026. Orders placed after July 1 must use the new vendor list in the purchasing portal.\n\nDistribution: operations, finance, facilities"
+    }
+  ],
+  "order": 3
+}

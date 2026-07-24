@@ -1,0 +1,73 @@
+{
+  "id": "docs-invoices",
+  "name": "Invoices & receipts",
+  "desc": "Five billing documents, clean prints and rough scans. Reads like real accounts-payable intake.",
+  "type": "doc",
+  "suggest": 512,
+  "rows": [
+    {
+      "file": "page-1.png",
+      "label": "Invoice - Meridian Office Supply",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice number; Invoice date; PO number; Total due. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice number": "INV-20417",
+        "Invoice date": "March 12, 2026",
+        "PO number": "PO-88213",
+        "Total due": "$1,284.50"
+      },
+      "ocr": "MERIDIANOFFICESUPPLY\nINVOICE\n4410 CommerceWay,Columbus,OH 43219\nBill to\nInvoice no.\nINV-20417\nHarlow& Grant LLP\nInvoice date\nMarch 12,2026\n220 Fifth Avenue, Suite 900\nDue date\nApril 11,2026\nNew York, NY 10001\nPO number\nPO-88213\nDescription\nQty\nUnit price\nAmount\nCopy paper,letter,10-ream case\n6\n42.50\n255.00\nToner cartridge,black, HP 58X\n4\n118.00\n472.00\nErgonomic desk chair\n2\n189.00\n378.00\nWhiteboard markers,12-pack\n9\n13.50\n121.50\nSubtotal\n$1,226.50\nTax (4.7%)\n$58.00\nTotal due\n$1,284.50\nPayment terms: Net 30. Make checks payable to Meridian Office Supply.",
+      "parse": "INVOICE\n\nMERIDIAN OFFICE SUPPLY\n\n4410 Commerce Way, Columbus, OH 43219\n\nBill to\n\n**Harlow & Grant LLP**\n\n220 Fifth Avenue, Suite 900\n\nNew York, NY 10001\n\nInvoice no. INV-20417\n\nInvoice date March 12, 2026\n\nDue date April 11, 2026\n\nPO number PO-88213\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Copy paper, letter, 10-ream case | 6 | 42.50 | 255.00 |\n| Toner cartridge, black, HP 58X | 4 | 118.00 | 472.00 |\n| Ergonomic desk chair | 2 | 189.00 | 378.00 |\n| Whiteboard markers, 12-pack | 9 | 13.50 | 121.50 |\n\nSubtotal $1,226.50\n\nTax (4.7%) $58.00\n\nTotal due $1,284.50\n\nPayment terms: Net 30. Make checks payable to Meridian Office Supply."
+    },
+    {
+      "file": "page-2.png",
+      "label": "Utility bill - City Water Works",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Account number; Amount due; Due date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Account number": "4471-9902-05",
+        "Amount due": "$87.60",
+        "Due date": "June 21, 2026"
+      },
+      "ocr": "CITYWATERWORKS\nStatement of account\nAccountnumber\n4471-9902-05\nServiceaddress\n18AlderCourt,Bend,OR\nBilling period\nMay 1 -May 31, 2026\nPrevious balance\n$81.20\nPaymentreceived-thankyou\n-$81.20\nWater service (14 CCF)\n$64.40\nSewer service\n$18.90\nStormwaterfee\n$4.30\nAmount due\n$87.60\nDue date:June 21,2026\nQuestions?Call555-0142weekdays8amto5pm,orvisitcitywater.example.",
+      "parse": "# CITY WATER WORKS\n\nStatement of account\n\nAccount number 4471-9902-05\n\nService address **18 Alder Court, Bend, OR**\n\nBilling period May 1 - May 31, 2026\n\n| Previous balance | $81.20 |\n|---|---|\n| Payment received - thank you | -$81.20 |\n| Water service (14 CCF) | $64.40 |\n| Sewer service | $18.90 |\n| Stormwater fee | $4.30 |\n\n**Amount due** $87.60\n\n**Due date: June 21, 2026**\n\nQuestions? Call 555-0142 weekdays 8am to 5pm, or visit citywater.example."
+    },
+    {
+      "file": "page-3.png",
+      "label": "Receipt - Corner Cafe (scanned)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Total; Date; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$23.85",
+        "Date": "June 3, 2026",
+        "Card last four digits": "4421"
+      },
+      "ocr": "CORNER CAFE\n812PikeStreet,Seattle,WA\nJune 3,2026..08:41AM\n5.75\nLatte,oat milk\uff0c16 oz\nBreakfast burrito\n9.50\n4.25\nBlueberry muffin\nOrange juice\n4.35\nTOTAL\n$23.85\nVISA\n****4421\nAPPROVED\nThankyou-seeyou tomorrow!",
+      "parse": "# CORNER CAFE\n\n812 Pike Street, Seattle, WA\n\nJune 3, 2026 08:41 AM\n\n| Latte, oat milk, 16 oz | 5.75 |\n|---|---|\n| Breakfast burrito | 9.50 |\n| Blueberry muffin | 4.25 |\n| Orange juice | 4.35 |\n| TOTAL | $23.85 |\n| VISA *****4421 APPROVED |  |\n\nThank you - see you tomorrow!"
+    },
+    {
+      "file": "page-4.png",
+      "label": "Purchase order - Apex Components",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: PO number; Supplier; Ship-to city; Order total. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "PO number": "PO-77120",
+        "Supplier": "Apex Components Inc.",
+        "Ship-to city": "Denver",
+        "Order total": "$9,402.00"
+      },
+      "ocr": "PURCHASEORDER\nPO-77120\nSupplier\nApex Components Inc.\nOrder date\nApril2,2026\nShip to\nReceiving Dock 4, 55 Foundry Rd\nDenver,C0 80216\nItem\nDescription\nQty\nUnit\nAmount\nALU-3300\nAluminum bracket, anodized\n80\n22.40\n1,792.00\nFST-1108\nFastener kit, M6 stainless\n40\n9.80\n392.00\nPLT-0904\nSteel base plate, 6 mm\n25\n288.72\n7,218.00\nTotal units: 145\nOrder total\n$9,402.00\nAuthorized by: R. Calloway, Procurement\nDelivery required by April 24, 2026.",
+      "parse": "# PURCHASE ORDER PO-77120\n\nSupplier **Apex Components Inc.**\n\nOrder date **April 2, 2026**\n\nShip to Receiving Dock 4, 55 Foundry Rd Denver, CO 80216\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| ALU-3300 | Aluminum bracket, anodized | 80 | 22.40 | 1,792.00 |\n| FST-1108 | Fastener kit, M6 stainless | 40 | 9.80 | 392.00 |\n| PLT-0904 | Steel base plate, 6 mm | 25 | 288.72 | 7,218.00 |\n| Total units: | 145 | Order total |  | $9,402.00 |\n\nAuthorized by: R. Calloway, Procurement Delivery required by April 24, 2026."
+    },
+    {
+      "file": "page-5.png",
+      "label": "Tax invoice - Northwind Energy",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice number; Customer; Amount due; Pay-by date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice number": "NW-55302",
+        "Customer": "Brightline Studios",
+        "Amount due": "$342.18",
+        "Pay-by date": "May 1, 2026"
+      },
+      "ocr": "NORTHWIND\nTax invoice\nENERGY LTD\nInvoice no.\nNW-55302\nBilling services\nCustomer\nBrightline Studios\nIssued\nApril18, 2026\nElectricity supply, March\n$296.40\nGreen power option\n$21.10\nNetwork charge\n$24.68\nAmount due\n$342.18\nPay by May 1, 2026 to avoid a late fee.\nDirectdebitreference:DD-90218\nnorthwind.example",
+      "parse": "NORTHWIND ENERGY LTD\n\nBilling services\n\nnorthwind.example\n\nTax invoice\n\nInvoice no. **NW-55302**\n\nCustomer **Brightline Studios**\n\nIssued **April 18, 2026**\n\nElectricity supply, March $296.40\n\nGreen power option $21.10\n\nNetwork charge $24.68\n\nAmount due **$342.18**\n\nPay by May 1, 2026 to avoid a late fee.\n\nDirect debit reference: DD-90218"
+    }
+  ],
+  "order": 1
+}

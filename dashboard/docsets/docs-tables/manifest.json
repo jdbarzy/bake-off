@@ -1,0 +1,69 @@
+{
+  "id": "docs-tables",
+  "name": "Tables & charts",
+  "desc": "Financial tables, a bar chart, a pie chart and a pricing grid. The answers live in visual structure, not plain text.",
+  "type": "doc",
+  "suggest": 512,
+  "rows": [
+    {
+      "file": "page-1.png",
+      "label": "Revenue table - Helio Systems FY25",
+      "question": "This is a page from a business report. Extract these fields exactly as printed: Q3 revenue all regions; EMEA full-year revenue; Region with highest Q4 revenue. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Q3 revenue all regions": "127.4",
+        "EMEA full-year revenue": "132.3",
+        "Region with highest Q4 revenue": "North America"
+      },
+      "ocr": "Helio Systems - Quarterly revenue by region\nFiscalyear2025,USDmillions\nRegion\nQ1\nQ2\nQ3\nQ4\nFY25\nNorth America\n48.2\n51.6\n55.1\n61.3\n216.2\nEMEA\n31.4\n30.9\n33.8\n36.2\n132.3\nAsia Pacific\n22.7\n24.5\n27.9\n30.4\n105.5\nLatin America\n9.1\n9.8\n10.6\n11.2\n40.7\nTotal\n111.4\n116.8\n127.4\n139.1\n494.7\nNote:Q4includes theMeridian contractrenewalinNorthAmerica.\nPrepared by Finance Operations, January 2026.",
+      "parse": "# Helio Systems - Quarterly revenue by region\n\nFiscal year 2025, USD millions\n\n| **Region** | **Q1** | **Q2** | **Q3** | **Q4** | **FY25** |\n|---|---|---|---|---|---|\n| North America | 48.2 | 51.6 | 55.1 | 61.3 | 216.2 |\n| EMEA | 31.4 | 30.9 | 33.8 | 36.2 | 132.3 |\n| Asia Pacific | 22.7 | 24.5 | 27.9 | 30.4 | 105.5 |\n| Latin America | 9.1 | 9.8 | 10.6 | 11.2 | 40.7 |\n| Total | 111.4 | 116.8 | 127.4 | 139.1 | 494.7 |\n\nNote: Q4 includes the Meridian contract renewal in North America.\n\nPrepared by Finance Operations, January 2026."
+    },
+    {
+      "file": "page-2.png",
+      "label": "Bar chart - monthly unit sales",
+      "question": "This is a page from a business report. Extract these fields exactly as printed: Month with highest sales; Month with lowest sales. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Month with highest sales": "March",
+        "Month with lowest sales": "February"
+      },
+      "ocr": "Retail unit sales by month\nStore 114, first half of 2026\n1,200\n900\n600\n300\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nUnits per month.Source:point-of-sale exports, store 114.",
+      "parse": "# Retail unit sales by month\n\nStore 114, first half of 2026\n\nUnits per month. Source: point-of-sale exports, store 114."
+    },
+    {
+      "file": "page-3.png",
+      "label": "Expense table - Crestway Logistics",
+      "question": "This is a page from a business report. Extract these fields exactly as printed: Largest expense category; Largest category spend; Share of total for largest category. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Largest expense category": "Salaries & benefits",
+        "Largest category spend": "$1,240,000",
+        "Share of total for largest category": "51.7%"
+      },
+      "ocr": "Operating expense breakdown\nCrestwayLogistics-fiscal2025\nCategory\nFY25 spend\nShare of total\nFleet fuel & maintenance\n$412,000\n17.2%\nSalaries&benefits\n$1,240,000\n51.7%\nWarehouseleases\n$386,000\n16.1%\nInsurance\n$154,000\n6.4%\nIT&software\n$121,000\n5.0%\nMarketing\n$87,000\n3.6%\nTotal operating expense\n$2,400,000\n100.0%\nSalaries&benefitsremain thelargestcategoryfor the thirdyearrunning\nFuel spend fell 6% year over year on route optimization.",
+      "parse": "# Operating expense breakdown\n\nCrestway Logistics - fiscal 2025\n\n| **Category** | **FY25 spend** | **Share of total** |  |\n|---|---|---|---|\n| Fleet fuel \\ | maintenance | $412,000 | 17.2% |\n| Salaries \\ | benefits | $1,240,000 | 51.7% |\n| Warehouse leases | $386,000 | 16.1% |  |\n| Insurance | $154,000 | 6.4% |  |\n| IT \\ | software | $121,000 | 5.0% |\n| Marketing | $87,000 | 3.6% |  |\n| Total operating expense | $2,400,000 | 100.0% |  |\n\nSalaries & benefits remain the largest category for the third year running. Fuel spend fell 6% year over year on route optimization."
+    },
+    {
+      "file": "page-4.png",
+      "label": "Pie chart - sensor market share",
+      "question": "This is a page from a business report. Extract these fields exactly as printed: Company with the largest share; Largest company share; Kastel share. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Company with the largest share": "Veltrix",
+        "Largest company share": "38%",
+        "Kastel share": "21%"
+      },
+      "ocr": "Market share, smart sensor segment\nCalendar2025,byrevenue\n14%\nVeltrix\nOrbita\n38%\nKastel\n21%\nOthers\n27%\nSharesarerounded to thenearestpercent.",
+      "parse": "# Market share, smart sensor segment\n\nCalendar 2025, by revenue\n\nShares are rounded to the nearest percent."
+    },
+    {
+      "file": "page-5.png",
+      "label": "Pricing grid - Stackline platform",
+      "question": "This is a page from a business report. Extract these fields exactly as printed: Business plan monthly price; Plan that includes 2 TB storage; Included seats on the Team plan. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Business plan monthly price": "$79",
+        "Plan that includes 2 TB storage": "Business",
+        "Included seats on the Team plan": "10"
+      },
+      "ocr": "Stackline platform pricing\nBilled monthly, per workspace\nBasic\nTeam\nBusiness\nEnterprise\nPrice per month\n$0\n$29\n$79\n$249\nIncluded seats\n3\n10\n25\nUnlimited\nStorage\n5GB\n200 GB\n2TB\n10 TB\nAudit log\nYes\nYes\nSupport\nCommunity\nEmail\nPriority\nDedicated\nAnnual billing saves20%oneverypaid plan.\nAll plans include unlimited viewers and two-factor sign-in.",
+      "parse": "## Stackline platform pricing\n\nBilled monthly, per workspace\n\n|  | **Basic** | **Team** | **Business** | **Enterprise** |\n|---|---|---|---|---|\n| Price per month | $0 | $29 | $79 | $249 |\n| Included seats | 3 | 10 | 25 | Unlimited |\n| Storage | 5 GB | 200 GB | 2 TB | 10 TB |\n| Audit log | - | - | Yes | Yes |\n| Support | Community | Email | Priority | Dedicated |\n\nAnnual billing saves 20% on every paid plan.\n\nAll plans include unlimited viewers and two-factor sign-in."
+    }
+  ],
+  "order": 2
+}

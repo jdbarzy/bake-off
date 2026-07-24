@@ -1,0 +1,11 @@
+question,__expected1
+"What is the capital of Australia?",icontains:Canberra
+"Who wrote the novel 1984?",icontains:Orwell
+"What is the chemical symbol for gold?",icontains:Au
+"In what year did the first human walk on the moon?",icontains:1969
+"What is the largest planet in our solar system?",icontains:Jupiter
+"How many continents are there on Earth?",icontains:seven
+"What gas do plants primarily absorb during photosynthesis?",icontains:carbon dioxide
+"What is the square root of 144?",icontains:12
+"Which ocean is the largest by surface area?",icontains:Pacific
+"What language has the most native speakers worldwide?",icontains:Chinese

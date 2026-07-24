@@ -1,0 +1,11 @@
+{
+  "// note": "Trim what VS Code watches/indexes so the inotify budget and RAM stay low (this had been OOM-killing the editor).",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/dashboard/lifetime.json": true,
+    "**/dashboard/dashboard.log": true
+  },
+  "search.followSymlinks": false,
+  "python.analysis.indexing": false,
+  "telemetry.telemetryLevel": "off"
+}

@@ -1,0 +1,1439 @@
+{
+  "id": "docs-stress-100",
+  "name": "Stress set - 100 documents",
+  "desc": "One hundred synthetic documents: invoices, photographed receipts, handwritten notes, forms, orders, charts, multi-page loan agreements, records, and work orders. Clean prints, rough scans, and hard-mode pages; one question in ten asks for a field that is not there.",
+  "type": "doc",
+  "suggest": 512,
+  "rows": [
+    {
+      "file": "page-001.png",
+      "label": "Employee record - Brightwell Components Inc. (hard scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Employee ID; Hire date; Annual salary; Reports to. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee ID": "E-3511",
+        "Hire date": "January 5, 2022",
+        "Annual salary": "$51,529.64",
+        "Reports to": "Amara Aldrich"
+      },
+      "ocr": "BRIGHTWELL COMPONENTSINC.\nEmployee record- confidential\nTessaKaminski\nEmployee\nE-3511\nEmployeeID\nFinance\nDepartment\nJanuary5,2022\nHire date\nAmaraAldrich\nReports to\n$51,529.64\nAnnual salary\nActive\nStatus\nDuluth\nLocation",
+      "parse": "BRIGHTWELL COMPONENTS INC.\n\nEmployee record - confidential\n\n| Employee | Tessa Kaminski |\n|---|---|\n| Employee ID | E-3511 |\n| Department | Finance |\n| Hire date | January 5, 2022 |\n| Reports to | Amara Aldrich |\n| Annual salary | $51,529.64 |\n| Status | Active |\n| Location | Duluth |"
+    },
+    {
+      "file": "page-002.png",
+      "label": "Receipt - Polar Freeze Ice Cream (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$35.69",
+        "Store name": "Polar Freeze Ice Cream",
+        "Card last four digits": "2163"
+      },
+      "ocr": "POLARFREEZEICECREAM\nDenver\uff0cco\nJuly 22,2026 6:18PM\nBouquet\uff0cseasonal\n18.50\nHousesalad\nDuct tape\n8.50\n5.49\nDay-oldbagelsx3\n3.20\nTOTAL\n$35.69\nVISA\n****2163\nAPPROVED\nThank you!",
+      "parse": "| POLAR FREEZE ICE CREAM |\n|---|\n| Denver, CO\n July 22, 2026 6:18 PM |\n| Bouquet, seasonal 18.50 |\n| House salad 8.50 |\n| Duct tape 5.49 |\n| Day-old bagels x3 3.20 |\n| TOTAL $35.69 |\n| VISA \\*\\*\\*2163 APPROVED\n Thank you! |"
+    },
+    {
+      "file": "page-003.png",
+      "label": "Job application - Cascade Print Works",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Applicant name; Position applied for; Employment type (checked box); Desired pay. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Applicant name": "Priya Rhee",
+        "Position applied for": "Line Cook",
+        "Employment type (checked box)": "Full-time",
+        "Desired pay": "$39.00 / hour"
+      },
+      "ocr": "CASCADEPRINTWORKS\nEmployment application\nFull name\nPhone\nPriya Rhee\n(555\uff090160-1069\nPosition applied for\nDesired pay\nLine Cook\n$39.00 / hour\nAvailablestartdate\nMarch 12\uff0c2026\nEmployment type\nX\nFull-time\nPart-time\nI certify theinformationaboveis accurate.\nSignature\nPriya Rhee",
+      "parse": "# CASCADE PRINT WORKS\n\nEmployment application\n\nFull name\n\nPriya Rhee\n\nPhone\n\n(555) 0160-1069\n\nPosition applied for\n\nLine Cook\n\nDesired pay\n\n$39.00 / hour\n\nAvailable start date\n\nMarch 12, 2026\n\nEmployment type\n\nFull-time\n\nPart-time\n\nI certify the information above is accurate.\n\nSignature"
+    },
+    {
+      "file": "page-004.png",
+      "label": "Invoice - Ironwood Industrial Parts (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Total due; Due date; Invoice date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total due": "$2,410.32",
+        "Due date": "October 17, 2026",
+        "Invoice date": "August 28, 2026"
+      },
+      "ocr": "IRONWOODINDUSTRIALPARTS\nINVOICE\nBill to\nInvoice no.\nINV-40859\nMarloweIndustrialParts\nInvoicedate\nAugust28,2026\nDue date\nOctober17,2026\nPO number.\nPO-59811\nDescription\nQty\nUnit price\nAmount\nErgonomicdeskchair\n6\n189.00\n1,134.00\nWhiteboard markers, 12-pack\n7\n13.50\n94.50\nLED panel light,2x4\n7\n89.25\n624.75\nTonercartridge,black\n3\n118.00\n354.00\nSubtotal\n$2,207.25\nTax (9.2%)\n$203.07\nTotal due\n$2,410.32\nPaymentterms:Net45.MakecheckspayabletoIronwoodIndustriaiParts.",
+      "parse": "**IRONWOOD INDUSTRIAL PARTS**\n\nINVOICE\n\nBill to\n\n**Marlowe Industrial Parts**\n\nInvoice no. INV-40859\n\nInvoice date August 28, 2026\n\nDue date October 17, 2026\n\nPO number PO-59811\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Ergonomic desk chair | 6 | 189.00 | 1,134.00 |\n| Whiteboard markers, 12-pack | 7 | 13.50 | 94.50 |\n| LED panel light, 2x4 | 7 | 89.25 | 624.75 |\n| Toner cartridge, black | 3 | 118.00 | 354.00 |\n\nSubtotal $2,207.25\n\nTax (9.2%) $203.07\n\nTotal due $2,410.32\n\nPayment terms: Net 45. Make checks payable to Ironwood Industrial Parts."
+    },
+    {
+      "file": "page-005.png",
+      "label": "Maintenance request form (hard scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Unit; Reported by; Priority (checked box); Date reported. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Unit": "18C",
+        "Reported by": "Yuki Castellano",
+        "Priority (checked box)": "Low",
+        "Date reported": "June 10, 2026"
+      },
+      "ocr": "TENANTMAINTENANCEREQUEST\nStonegatePropertyManagement\nUnit\nReportedby\n18C\nYuki Castellano\nDatereported\nIssue\nJune 10,2026\nBathroom fan rattles\nPriority\n Low\nNormal\nUrgent\nEntrypermissiongranted:YES/NO",
+      "parse": "## TENANT MAINTENANCE REQUEST\n\n# Stonegate Property Management\n\nUnit\n\nDate reported\n\nReported by\n\nIssue\n\nPriority\n\nX Low\n\nNormal\n\nUrgent\n\nEntry permission granted: YES / NO"
+    },
+    {
+      "file": "page-006.png",
+      "label": "Insurance claim - Copperfield Trust Company (rough scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Claim number; Policyholder; Amount claimed; Cause of loss (checked box). Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Claim number": "CLM-2024-98396",
+        "Policyholder": "Rosa Holt",
+        "Amount claimed": "$13,241.69",
+        "Cause of loss (checked box)": "Theft"
+      },
+      "ocr": "COPPERFIELDTRUSTCOMPANY\nPropertyclaimform\nClaim number\nPolicyholder\nRosa Holt\nCLM-2024-98396\nDate of incident\nAmountclaimed\nSeptember 4, 2025\n$13,241.69\nCause of loss\nHail\nWater leak.\n]Theft\nWind.\nFire\nDescribethedamage:\nDamage to the basement carpet and drywall.",
+      "parse": "# COPPERFIELD TRUST COMPANY\n\nProperty claim form\n\nClaim number\n\nPolicyholder\n\nDate of incident\n\nAmount claimed\n\nCause of loss\n\nHail\n\nWater leak\n\nTheft\n\nWind\n\nFire\n\nDescribe the damage:\n\nDamage to the basement carpet and drywall."
+    },
+    {
+      "file": "page-007.png",
+      "label": "Service record - Larkspur Auto Service (rough scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Odometer; Service date; Total; Vehicle. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Odometer": "107,728 mi",
+        "Service date": "March 2, 2025",
+        "Total": "$161.53",
+        "Vehicle": "2019 Camry"
+      },
+      "ocr": "LARKSPURAUTOSERVICE\nServicerecord\nVehicle\n2019 Camry\nOrder no.\nRO-48286\nOdometer\n107,728mi\nService date\nMarch2,2025\nOilandfilterchange\n$127.28\nTire rotation\n$34.25\nTotal\n$161.53",
+      "parse": "LARKSPUR AUTO SERVICE\n\nService record\n\n| Vehicle | 2019 Camry | Order no. | RO-48286 |\n|---|---|---|---|\n| Odometer | 107,728 mi |  |  |\n| Service date | March 2, 2025 |  |  |\n| Oil and filter change |  |  | $127.28 |\n| Tire rotation |  |  | $34.25 |\n| Total |  |  | $161.53 |"
+    },
+    {
+      "file": "page-008.png",
+      "label": "Expense report - Stonegate Components Inc. (hard scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Employee; Department; Total requested. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee": "Priya Strand",
+        "Department": "Sales",
+        "Total requested": "$115.51"
+      },
+      "ocr": "STONEGATECOMPONENTSINC.\nExpensereimbursementform\nDepartment\nEmployee\nSales\nPriya Strand\n$56.12\nMileage\n$45.22\nMeals\n$14.17\nParking\n$115.51\nTotal requested",
+      "parse": "STONEGATE COMPONENTS INC.\n\nExpense reimbursement form\n\nEmployee\n\nDepartment\n\n| Priya Strand | Sales |\n|---|---|\n| Mileage | $56.12 |\n| Meals | $45.22 |\n| Parking | $14.17 |\n| Total requested | $115.51 |"
+    },
+    {
+      "file": "page-009.png",
+      "label": "Work order WO-2022-9417 (hard scan)",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Completed (checked) steps; Work order number; Total steps; Priority; Supervisor signature. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Completed (checked) steps": "1",
+        "Work order number": "WO-2022-9417",
+        "Total steps": "5",
+        "Priority": "High",
+        "Supervisor signature": "not found"
+      },
+      "ocr": "WORK ORDER\nWO-2022-9417\nLakeshore Facilities\nAssigned to\nYuki Boone\nAsset\nPriority\nAHU-02\nHigh\nDue date\nJune6,2026\nChecklist(checked=complete):\nUpdateservicetag\nIsolatepoweratpanel\nTestrun15minutes\nClearintakescreen\nPhiotographnameplate\nTechnician notes:parts on hand,no downtime expected.",
+      "parse": "# WORK ORDER WO-2022-9417\n\nLakeshore Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nYuki Boone\n\nHigh\n\nJune 6, 2026\n\nAsset\n\nAHU-02\n\nChecklist (checked = complete):\n\nUpdate service tag\n\nIsolate power at panel\n\nTest run 15 minutes\n\nClear intake screen\n\nPhotograph nameplate\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-010.png",
+      "label": "Receipt - Union Diner (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$19.24",
+        "Store name": "Union Diner",
+        "Card last four digits": "3103"
+      },
+      "ocr": "UNIONDINER\nErie,PA\nNovember 10\uff0c2026 8:35 PM\n5.49\nDuct tape\n8.50\nHouse salad\n5.25\nPie slice\uff0ccherry\n$19.24\nTOTAL\nVISA\n****3103\nAPPROVED\nThank you!",
+      "parse": "| \\multicolumn{2}{c}{UNION DINER} |  |\n|---|---|\n| Erie, PA |  |\n| November 10, 2026 8:35 PM |  |\n| Duct tape | 5.49 |\n| House salad | 8.50 |\n| Pie slice, cherry | 5.25 |\n| TOTAL | $19.24 |\n| VISA \\*\\*\\*\\*3103 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-011.png",
+      "label": "Chart - Larkspur monthly revenue ($ thousands) (rough scan)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Tallest bar month; Value printed above the Mar bar. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Larkspur monthly revenue ($ thousands)",
+        "Tallest bar month": "Nov",
+        "Value printed above the Mar bar": "128"
+      },
+      "ocr": "Larkspur monthly revenue ($ thousands)\n200\n175\n162\n150\n128\n111\n100\n79\n74\n63\n50.\n43\nSep\nOct\nNov\nDec\nJan\nFeb\nMar\nApr",
+      "parse": "**Larkspur monthly revenue ($ thousands)**"
+    },
+    {
+      "file": "page-012.png",
+      "label": "Chart - Northwind monthly revenue ($ thousands)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Tallest bar month; Value printed above the Mar bar. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Northwind monthly revenue ($ thousands)",
+        "Tallest bar month": "Jan",
+        "Value printed above the Mar bar": "100"
+      },
+      "ocr": "Northwind monthly revenue ($ thousands)\n200\n192\n161\n162\n150\n150\n128\n103\n100\n100\n91\n50\nOct\nNov\nDec\nJan\nFeb\nMar\nApr\nMay",
+      "parse": ""
+    },
+    {
+      "file": "page-013.png",
+      "label": "Order - Stonegate Packaging Corp. (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order status; Total units; Ship-to city; Ship by date; Tracking number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order status": "Processing",
+        "Total units": "131",
+        "Ship-to city": "Mesa",
+        "Ship by date": "April 5, 2026",
+        "Tracking number": "not found"
+      },
+      "ocr": "SO-541515\nSALESORDER\nSupplier\nStonegatePackaging Corp.\nOrderdate\nApril2,2026\nShip by\nApril5,2026\nStatus\nProcessing\nShip to\nBill to\n8995MillRaceLn,Duluth,MN55802\n5369CommerceWay,Mesa,AZ85201\nQty\nUnit\nAmount\nItem\nDescription\n74\n9.80\n725.20\nFST-1108\nFastenerkit,M6\n57\n22.40\n1,276.80\nALU-3300\nAluminumbracket,anodized\nOrder total.\n$2,002.00\nTotal units: 131\nQuestions?Call(555)0166-9575orwrite toorders@stonegate.example.",
+      "parse": "**SALES ORDER** **SO-541515**\n\nSupplier **Stonegate Packaging Corp.**\nOrder date **April 2, 2026**\nShip by **April 5, 2026**\nStatus **Processing**\n\nBill to\n8995 Mill Race Ln, Duluth, MN 55802\n\nShip to\n5369 Commerce Way, Mesa, AZ 85201\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| FST-1108 | Fastener kit, M6 | 74 | 9.80 | 725.20 |\n| ALU-3300 | Aluminum bracket, anodized | 57 | 22.40 | 1,276.80 |\n\nTotal units: 131\n\nOrder total $2,002.00\n\nQuestions? Call (555) 0166-9575 or write to orders@stonegate.example."
+    },
+    {
+      "file": "page-014.png",
+      "label": "Maintenance request form (rough scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Unit; Reported by; Priority (checked box); Date reported. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Unit": "18D",
+        "Reported by": "Amara Calloway",
+        "Priority (checked box)": "Urgent",
+        "Date reported": "May 14, 2026"
+      },
+      "ocr": "TENANTMAINTENANCEREQUEST\nIronwood PropertyManagement\nUnit\nReportedby\n18D\nAmara Calloway\nDatereported\u00b7\nIssue\nRadiator not heating\nMay 14, 2026\nPriority\n Low\nNormal\nUrgent\nEntry permission granted:YES/NO",
+      "parse": "# TENANT MAINTENANCE REQUEST\n\nIronwood Property Management\n\nUnit\n\nReported by\n\nDate reported\n\nIssue\n\nPriority\n\nEntry permission granted: YES / NO"
+    },
+    {
+      "file": "page-015.png",
+      "label": "Meeting notes (handwritten) (rough scan)",
+      "question": "This is a page of handwritten meeting notes. Extract these fields exactly as printed: Meeting date; Number of action items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Meeting date": "April 21, 2026",
+        "Number of action items": "4"
+      },
+      "ocr": "Meridian redesign - hotes\nApril 21, 2026\nDiscussed:\nship date holds for now\n- staging env still flaky\n-vendor demo went fine\nAction items:\n1. Noor: draft the memo\n2. Colin: send the invoice\n3. Deshawh: call the vendor\n4. Rosa: call the vendor",
+      "parse": "| Meridian redesign - notes | April 21, 2026 |\n|---|---|\n| Discussed: | - ship date holds for now |\n|  | - staging env still flaky |\n|  | - vendor demo went fine |\n| Action items: |  |\n|  | 1. Noor: draft the memo |\n|  | 2. Colin: send the invoice |\n|  | 3. Deshawn: call the vendor |\n|  | 4. Rosa: call the vendor |"
+    },
+    {
+      "file": "page-016.png",
+      "label": "Chart - Regional market share, 2026",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Largest share company; Share shown for Apex. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Regional market share, 2026",
+        "Largest share company": "Marlowe",
+        "Share shown for Apex": "13%"
+      },
+      "ocr": "Regional market share, 2026\nQuarry -30%\nKestrel-21%\nApex -13%\nMarlowe-36%",
+      "parse": "Regional market share, 2026"
+    },
+    {
+      "file": "page-017.png",
+      "label": "Phone message (handwritten)",
+      "question": "This is a handwritten phone message slip. Extract these fields exactly as printed: Caller name; Callback number; Time of call; Case number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Caller name": "Marta Dupree",
+        "Callback number": "(555) 0156-2447",
+        "Time of call": "10:30 AM",
+        "Case number": "not found"
+      },
+      "ocr": "WHILE YOU WERE OUT\nFor:\ngune Novak\nFrom:\nMartaBupree\nPinnacleBiatrilution Hroup\nOf:\nPhone:\n(555) 0156-2447\nTime:\n10:30 CM\nMessage:\nneede the oigned contract",
+      "parse": "WHILE YOU WERE OUT\n\n|  |  |\n|---|---|\n| For: | June Novak |\n| From: | Marta Dupree |\n| Of: | Pinnacle Distribution Group |\n| Phone: | (555) 0156-2447 |\n| Time: | 10:30 AM |\n| Message: | needs the signed contract |"
+    },
+    {
+      "file": "page-018.png",
+      "label": "To-do list (handwritten)",
+      "question": "This is a handwritten to-do list; checked boxes are completed. Extract these fields exactly as printed: List title; Total items; Completed (checked) items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "List title": "Garage cleanout",
+        "Total items": "5",
+        "Completed (checked) items": "4"
+      },
+      "ocr": "Garage cleanout\nclean gutters\nsharpen mower blade\npack toolbox\ndrop off donations\n1oil change",
+      "parse": "### Garage cleanout\n\n\u2612 clean gutters\n\n\u2610 sharpen mower blade\n\n\u2612 pack toolbox\n\n\u2612 drop off donations\n\n\u2610 oil change"
+    },
+    {
+      "file": "page-019.png",
+      "label": "Order - Kestrel Packaging Corp. (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order status; Ship by date; Ship-to city; Tracking number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order status": "Shipped",
+        "Ship by date": "October 19, 2026",
+        "Ship-to city": "Denver",
+        "Tracking number": "not found"
+      },
+      "ocr": "ORDER CONFIRMATION\nSO-203190\nSupplier\nKestrel Packaging Corp.\nOrder date\nOctober9,2026\nShip by\nOctober19,2026\nStatus\nShipped\nBillto\nShip to\n5590SummitAve,Toledo,OH43604\n1340CanneryRow,Denver,CO80216\nItem\nDescription\nQty\nUnit\nAmount\nCBL-914\nControl cable,5m\n86\n21.70\n1,866.20\nGSK-2210\nGasketset,EPDM\n95\n14.60\n1,387.00\nTotal units: 181\nOrdertotal\n$3,253.20\nQuestions?Call(555)0198-9363orwriteto.orders@kestrel.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-203190**\n\nSupplier **Kestrel Packaging Corp.**\n\nOrder date **October 9, 2026**\n\nShip by **October 19, 2026**\n\nStatus **Shipped**\n\nBill to\n\n5590 Summit Ave, Toledo, OH 43604\n\nShip to\n\n1340 Cannery Row, Denver, CO 80216\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| CBL-914 | Control cable, 5 m | 86 | 21.70 | 1,866.20 |\n| GSK-2210 | Gasket set, EPDM | 95 | 14.60 | 1,387.00 |\n\nTotal units: 181\n\nOrder total $3,253.20\n\nQuestions? Call (555) 0198-9363 or write to orders@kestrel.example."
+    },
+    {
+      "file": "page-020.png",
+      "label": "Invoice - Northwind Textiles Ltd. (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice date; Invoice number; Due date; Total due. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice date": "February 18, 2026",
+        "Invoice number": "INV-25477",
+        "Due date": "April 7, 2026",
+        "Total due": "$1,102.91"
+      },
+      "ocr": "NORTHWIND TEXTILES LTD.\nINVOICE\nBill:to\nInvoice no.\nINV-25477\nAmaraHoltLLP\nInvoice date\nFebruary18,2026\nDue date\nApril7,2026\nPOnumber\nPO-74868\nDescription\nQty\nUnit price\nAmount\nPackingtape,36-rollcase\n2\n51.50\n103.00\nNitrile.gloves,case.of1000\n8\n64.80\n518.40\nCopypaper,letter,10-ream.case\n10\n42.50\n425.00\nSubtotal\n$1,046.40\nTax (5.4%)\n$56.51\nTotal due\n$1,102.91\nPayment terms:Net 45.Make checkspayable toNorthwindTextilesLtd.",
+      "parse": "NORTHWIND TEXTILES LTD. INVOICE\n\nBill to Amara Holt LLP\n\nInvoice no. INV-25477 Invoice date February 18, 2026 Due date April 7, 2026 PO number PO-74868\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Packing tape, 36-roll case | 2 | 51.50 | 103.00 |\n| Nitrile gloves, case of 1000 | 8 | 64.80 | 518.40 |\n| Copy paper, letter, 10-ream case | 10 | 42.50 | 425.00 |\n\nSubtotal $1,046.40 Tax (5.4%) $56.51 Total due $1,102.91\n\nPayment terms: Net 45. Make checks payable to Northwind Textiles Ltd.."
+    },
+    {
+      "file": "page-021.png",
+      "label": "Service record - Brightwell Auto Service",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Odometer; Service date; Total; Vehicle. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Odometer": "142,835 mi",
+        "Service date": "July 12, 2025",
+        "Total": "$426.81",
+        "Vehicle": "2015 Tacoma"
+      },
+      "ocr": "BRIGHTWELLAUTOSERVICE\nService record\nVehicle\n2015 Tacoma\nOrder no.\nRO-30820\nOdometer\n142,835 mi\nService date\nJuly 12,2025\nOil and filter change\n$71.32\nBrake pads, front\n$189.24\nTire rotation\n$25.34\nCoolant flush\n$140.91\nTotal\n$426.81",
+      "parse": "BRIGHTWELL AUTO SERVICE\n\nService record\n\n| Vehicle | 2015 Tacoma | Order no. | RO-30820 |\n|---|---|---|---|\n| Odometer | 142,835 mi |  |  |\n| Service date | July 12, 2025 |  |  |\n| \\multicolumn{2}{c}{Oil and filter change} |  | $71.32 |  |\n| \\multicolumn{2}{c}{Brake pads, front} |  | $189.24 |  |\n| \\multicolumn{2}{c}{Tire rotation} |  | $25.34 |  |\n| \\multicolumn{2}{c}{Coolant flush} |  | $140.91 |  |\n| Total |  |  | $426.81 |"
+    },
+    {
+      "file": "page-022.png",
+      "label": "Expense report - Fairbanks Print Works (rough scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Employee; Department; Total requested. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee": "Gavin Holt",
+        "Department": "Support",
+        "Total requested": "$340.26"
+      },
+      "ocr": "FAIRBANKS PRINT WORKS\nExpensereimbursementform\nEmployee\nDepartment\nGavin Holt\nuoddns\nMileage\n$90.30\nMeals\n$82.47\nLodging\n$153.05\nParking\n$14.44\nTotalrequested\n$340.26",
+      "parse": "FAIRBANKS PRINT WORKS\n\nExpense reimbursement form\n\nEmployee\n\nDepartment\n\n| Gavin Holt | Support |\n|---|---|\n| Mileage | $90.30 |\n| Meals | $82.47 |\n| Lodging | $153.05 |\n| Parking | $14.44 |\n| Total requested | $340.26 |"
+    },
+    {
+      "file": "page-023.png",
+      "label": "Chart - Units sold by product, Q2 2026 (rough scan)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Top product; Units shown for Flow meter. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Units sold by product, Q2 2026",
+        "Top product": "Pump seal",
+        "Units shown for Flow meter": "285"
+      },
+      "ocr": "Units sold by product, Q2 2026\nTimermodule\n405\nAnchorkit\n457\nHinge set\n481\nFlowmeter\n285\nPumpseal:\n783",
+      "parse": "Units sold by product, Q2 2026"
+    },
+    {
+      "file": "page-024.png",
+      "label": "Lab report - Apex Clinical Laboratory",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Patient; Collected; Glucose result; Accession. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Patient": "Amara Iyer",
+        "Collected": "March 4, 2026",
+        "Glucose result": "70",
+        "Accession": "ACC-631912"
+      },
+      "ocr": "APEXCLINICALLABORATORY\nLaboratoryreport\nPatient\nAmara lyer\nAccession\nACC-631912\nDate of birth\nApril21,1963\nCollected\nMarch4,2026\nTest\nResult\nUnits\nReference\nGlucose\n70\nmg/dL\n70-99\nHemoglobin\n16.3\n7p/6\n13.5-17.5\nWBC\n9.2\n10~3/uL\n4.5-11.0\nCholesterol\n168\nmg/dL\n<200",
+      "parse": "# APEX CLINICAL LABORATORY\n\nLaboratory report\n\n| Patient | Amara Iyer | Accession | ACC-631912 |\n|---|---|---|---|\n| Date of birth | April 21, 1963 |  |  |\n| Collected | March 4, 2026 |  |  |\n\n| **Test** | **Result** | **Units** | **Reference** |\n|---|---|---|---|\n| Glucose | 70 | mg/dL | 70-99 |\n| Hemoglobin | 16.3 | g/dL | 13.5-17.5 |\n| WBC | 9.2 | 10^3/uL | 4.5-11.0 |\n| Cholesterol | 168 | mg/dL | < 200 |"
+    },
+    {
+      "file": "page-025.png",
+      "label": "Employee record - Stonegate Distribution Group (rough scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Employee ID; Hire date; Annual salary; Reports to. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee ID": "E-8567",
+        "Hire date": "January 3, 2020",
+        "Annual salary": "$58,969.86",
+        "Reports to": "Marta Aldrich"
+      },
+      "ocr": "STONEGATEDISTRIBUTIONGROUP\nEmployee record-confidential\nEmployee\nJune Tanaka\nEmployee ID\nE-8567\nDepartment\nFinance\nHire date\nJanuary3,2020\nReports to\nMartaAldrich\nAnnual.salary\n$58,969.86\nStatus\nActive\nLocation\nWaco",
+      "parse": "# STONEGATE DISTRIBUTION GROUP\n\nEmployee record - confidential\n\n| Employee | June Tanaka |\n|---|---|\n| Employee ID | E-8567 |\n| Department | Finance |\n| Hire date | January 3, 2020 |\n| Reports to | Marta Aldrich |\n| Annual salary | $58,969.86 |\n| Status | Active |\n| Location | Waco |"
+    },
+    {
+      "file": "page-026.png",
+      "label": "Chart - Units sold by product, Q2 2026 (rough scan)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Top product; Units shown for Timer module. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Units sold by product, Q2 2026",
+        "Top product": "Pump seal",
+        "Units shown for Timer module": "532"
+      },
+      "ocr": "Units sold by product, Q2 2026\nFlowmeter\n695\nHinge set\n675\nTimermodule\n532\nAnchorkit\n724\nPump seal",
+      "parse": "Units sold by product, Q2 2026"
+    },
+    {
+      "file": "page-027.png",
+      "label": "Insurance claim - Harborline Mutual",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Claim number; Policyholder; Amount claimed; Cause of loss (checked box). Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Claim number": "CLM-2020-88275",
+        "Policyholder": "Dana Okafor",
+        "Amount claimed": "$12,965.47",
+        "Cause of loss (checked box)": "Theft"
+      },
+      "ocr": "HARBORLINEMUTUAL\nProperty claim form\nClaim number\nPolicyholder\nCLM-2020-88275\nDana Okafor\nDate of incident\nAmountclaimed\nMay 19\uff0c2025\n$12,965.47\nCause of loss\nHail\nWater leak\nX\nTheft\nWind\nFire\nDescribethe damage:\nDamage to the kitchen ceiling and cabinets.",
+      "parse": "HARBORLINE MUTUAL\n\nProperty claim form\n\nClaim number\n\nCLM-2020-88275\n\nPolicyholder\n\nDana Okafor\n\nDate of incident\n\nMay 19, 2025\n\nAmount claimed\n\n$12,965.47\n\nCause of loss\n\nHail\n\nWater leak\n\nTheft\n\nWind\n\nFire\n\nDescribe the damage:\n\nDamage to the kitchen ceiling and cabinets."
+    },
+    {
+      "file": "page-028.png",
+      "label": "Work order WO-2026-2820 (rough scan)",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Work order number; Completed (checked) steps; Total steps; Priority. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Work order number": "WO-2026-2820",
+        "Completed (checked) steps": "7",
+        "Total steps": "8",
+        "Priority": "Emergency"
+      },
+      "ocr": "WORK ORDER\nWO-2026-2820\nRedbud Facilities\nAssigned to\nIngridPemberton\nAsset\nAHU-16\nPriority\nEmergency\nDue date\nNovember28,2026\nChecklist(checked=complete):\nUpdateservicetag\nVerify guard reinstalled\nTestrun15minutes\nPhotograph nameplate\nCheck alignment\nTorquemounting bolts\nReplacewornbelt\nClearintakescreen\nTechnician notes:parts onhand,no.downtime expected.",
+      "parse": "# WORK ORDER WO-2026-2820\n\nRedbud Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nIngrid Pemberton\n\nEmergency\n\nNovember 28, 2026\n\nAsset\n\nAHU-16\n\nChecklist (checked = complete):\n\nUpdate service tag\n\nVerify guard reinstalled\n\nTest run 15 minutes\n\nPhotograph nameplate\n\nCheck alignment\n\nTorque mounting bolts\n\nReplace worn belt\n\nClear intake screen\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-029.png",
+      "label": "Order - Redbud Building Services (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order number; Total units; Ship-to city; Order status. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order number": "SO-640232",
+        "Total units": "292",
+        "Ship-to city": "Augusta",
+        "Order status": "Processing"
+      },
+      "ocr": "ORDERCONFIRMATION\nSO-640232\nSupplier\nRedbudBuildingServices\nOrderdate\nJuly 17,2026\nShip by\nAugust 9,2026\nStatus\nProcessing\nBill to\nShip to\n8120HarborBlvd,Erie,PA16501\n2300.PikeStreet,Augusta,GA30901\nItem\nDescription\nQty\nUnit\nAmount\nHSE-077\nHydraulic hose, 2 m\n49\n54.10\n2,650.90\nCBL-914\nControl cable,5m\n100\n21.70\n2,170.00\nVLV-208\nCheck valve, brass\n30\n48.90\n1,467.00\nALU-3300\nAluminumbracket,anodized\n42\n22.40\n940.80\nGSK-2210\nGasket set,EPDM\n71\n14.60\n1,036.60\nTotal units:292\nOrdertotal\n$8,265.30\nQuestions?Call(555)0129-4565orwritetoorders@redbud.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-640232**\n\nSupplier **Redbud Building Services**\n\nOrder date **July 17, 2026**\n\nShip by **August 9, 2026**\n\nStatus **Processing**\n\nBill to\n\n8120 Harbor Blvd, Erie, PA 16501\n\nShip to\n\n2300 Pike Street, Augusta, GA 30901\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| HSE-077 | Hydraulic hose, 2 m | 49 | 54.10 | 2,650.90 |\n| CBL-914 | Control cable, 5 m | 100 | 21.70 | 2,170.00 |\n| VLV-208 | Check valve, brass | 30 | 48.90 | 1,467.00 |\n| ALU-3300 | Aluminum bracket, anodized | 42 | 22.40 | 940.80 |\n| GSK-2210 | Gasket set, EPDM | 71 | 14.60 | 1,036.60 |\n\nTotal units: 292\n\nOrder total $8,265.30\n\nQuestions? Call (555) 0129-4565 or write to orders@redbud.example."
+    },
+    {
+      "file": "page-030.png",
+      "label": "Chart - Regional market share, 2026",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Largest share company; Share shown for Meridian. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Regional market share, 2026",
+        "Largest share company": "Marlowe",
+        "Share shown for Meridian": "10%"
+      },
+      "ocr": "Regional market share, 2026\nMeridian - 10%\nNorthwind-19%\nBrightwell-25%\nMarlowe-46%",
+      "parse": "Regional market share, 2026"
+    },
+    {
+      "file": "page-031.png",
+      "label": "Receipt - Petal & Stem Florist (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$49.73",
+        "Store name": "Petal & Stem Florist",
+        "Card last four digits": "9917"
+      },
+      "ocr": "PETAL&STEMFLORIST\nFresno,CA\nJuly 7,20264:37 PM\n5.75\nLatte\uff0coat milk\n5.49\nDucttape\n3.50\nSticker pack\n18.50\nBouquet\uff0cseasonal\n7.99\nPaperback,used\n8.50\nHouse salad\n$49.73\nTOTAL\n****9917\nAPPROVED\nVISA\nThank you!",
+      "parse": "| PETAL \\ | STEM FLORIST |\n|---|---|\n| Fresno, CA\n July 7, 2026 4:37 PM |  |\n| Latte, oat milk 5.75 |  |\n| Duct tape 5.49 |  |\n| Sticker pack 3.50 |  |\n| Bouquet, seasonal 18.50 |  |\n| Paperback, used 7.99 |  |\n| House salad 8.50 |  |\n| TOTAL $49.73 |  |\n| VISA \\*\\*\\*\\*\\*9917 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-032.png",
+      "label": "Work order WO-2023-5456 (rough scan)",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Priority; Work order number; Total steps; Due date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Priority": "Emergency",
+        "Work order number": "WO-2023-5456",
+        "Total steps": "6",
+        "Due date": "October 9, 2026"
+      },
+      "ocr": "WO-2023-5456\nWORK ORDER\nKestrelFacilities\nAsset\nAHU-02\nAssigned to\nGavinCalloway\nPriority\nEmergency\nDue date\nOctober9,2026\nChecklist(checked=complete):\nPhotograph nameplate\nClearintakescreen\nUpdateservicetag\nVerifyguardreinstalled\nTestrun15minutes\nTorquemountingbolts\nTechnician notes:parts onhand,no downtime expected.",
+      "parse": "# WORK ORDER\n\n**WO-2023-5456**\n\nKestrel Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nGavin Calloway\n\nEmergency\n\nOctober 9, 2026\n\nAsset\n\nAHU-02\n\nChecklist (checked = complete):\n\nPhotograph nameplate\n\nClear intake screen\n\nUpdate service tag\n\nVerify guard reinstalled\n\nTest run 15 minutes\n\nTorque mounting bolts\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-033.png",
+      "label": "Work order WO-2022-3919",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Due date; Completed (checked) steps; Priority; Total steps. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Due date": "July 5, 2026",
+        "Completed (checked) steps": "2",
+        "Priority": "High",
+        "Total steps": "6"
+      },
+      "ocr": "WORK ORDER\nWO-2022-3919\nCascadeFacilities\nAssigned to\nCallie Tanaka\nAsset\nAHU-14\nPriority\nHigh\nDue date\nJuly5,2026\nChecklist (checked = complete):\nReplace worn belt\nCheckalignment\nUpdateservicetag\nClearintake screen\nIsolatepoweratpanel\nVerify guard reinstalled\nTechnician notes: parts on hand, no downtime expected.",
+      "parse": "# WORK ORDER\n\n**WO-2022-3919**\n\nCascade Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nCallie Tanaka\n\nHigh\n\nJuly 5, 2026\n\nAsset\n\nAHU-14\n\nChecklist (checked = complete):\n\nReplace worn belt\n\nCheck alignment\n\nUpdate service tag\n\nClear intake screen\n\nIsolate power at panel\n\nVerify guard reinstalled\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-034.png",
+      "label": "Invoice - Bluecrest Components Inc.",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice date; Due date; Total due; PO number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice date": "October 11, 2025",
+        "Due date": "November 28, 2025",
+        "Total due": "$1,276.96",
+        "PO number": "PO-29886"
+      },
+      "ocr": "BLUECRESTCOMPONENTSINC.\nINVOICE\n7661CommerceWay,Denver,C080216\nInvoice no.\nINV-14770\nBill to\nApexIndustrialParts\nInvoice date\nOctober 11,2025\nDue date\nNovember28,202\nPO number\nPO-29886\nDescription\nQty\nUnit price\nAmount\nCopy paper,letter,10-ream case\n2\n42.50\n85.00\nErgonomic desk chair\n4\n189.00\n756.00\nBreakroomcoffee,5Ib\n8\n46.75\n374.00\nSubtotal\n$1,215.00\nTax (5.1%)\n$61.96\nTotal due\n$1,276.96\nPayment terms:Net 45.Make checks payable to Bluecrest Components Inc..",
+      "parse": "INVOICE\n\n**BLUECREST COMPONENTS INC.**\n\n7661 Commerce Way, Denver, CO 80216\n\nBill to\n\n**Apex Industrial Parts**\n\nInvoice no.  **INV-14770**\n\nInvoice date  October 11, 2025\n\nDue date  November 28, 2025\n\nPO number  PO-29886\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Copy paper, letter, 10-ream case | 2 | 42.50 | 85.00 |\n| Ergonomic desk chair | 4 | 189.00 | 756.00 |\n| Break room coffee, 5 lb | 8 | 46.75 | 374.00 |\n\nSubtotal $1,215.00\n\nTax (5.1%) $61.96\n\nTotal due $1,276.96\n\nPayment terms: Net 45. Make checks payable to Bluecrest Components Inc.."
+    },
+    {
+      "file": "page-035.png",
+      "label": "Invoice - Ironwood Industrial Parts (paid stamp)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Due date; Vendor name; Total due; Invoice date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Due date": "October 2, 2025",
+        "Vendor name": "Ironwood Industrial Parts",
+        "Total due": "$2,182.14",
+        "Invoice date": "September 15, 2025"
+      },
+      "ocr": "IRONWOODINDUSTRIALPARTS\nINVOICE\n8575 Cannery Row,Duluth,MN55802\nInvoice no.\nINV-44941\nBill to\nIronwood Building Services\nInvoice date\nSeptember 15,20\nDue date\nOctober2,2025\nPO number\nPO-66125\nDescription\nQty\nUnit price\nAmount\nSteel shelving unit, 72 in\n6\n244.00\n1,464.00\nLED panel light, 2x4\n2\n89.25\n178.50\nErgonomicdesk chair\n2\n189.00\n378.00\nSubtotal\n$2,020.50\nTax (8.0%)\n$161.64\nTotal due\n$2,182.14\nPAID\nPayment terms:Net 15. Make checks payable to Ironwood Industrial Parts.",
+      "parse": "INVOICE\n\n**IRONWOOD INDUSTRIAL PARTS**\n\n8575 Cannery Row, Duluth, MN 55802\n\nBill to\n\n**Ironwood Building Services**\n\nInvoice no. INV-44941\n\nInvoice date September 15, 20\n\nDue date October 2, 2025\n\nPO number PO-66125\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Steel shelving unit, 72 in | 6 | 244.00 | 1,464.00 |\n| LED panel light, 2x4 | 2 | 89.25 | 178.50 |\n| Ergonomic desk chair | 2 | 189.00 | 378.00 |\n\nSubtotal $2,020.50\n\nTax (8.0%) $161.64\n\nTotal due $2,182.14\n\nPayment terms: Net 15. Make checks payable to Ironwood Industrial Parts."
+    },
+    {
+      "file": "page-036.png",
+      "label": "Receipt - Hilltop Grocery (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Payment method. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$31.69",
+        "Store name": "Hilltop Grocery",
+        "Payment method": "CASH TENDERED"
+      },
+      "ocr": "HILLTOP GROCERY\nProvo,UT\nAugust 17,2026 7:33 PM\nWrench set\uff0cmetric\n24.99\nCoffee,drip\uff0clarge\nSticker pack\n3.20\n3.50\nTOTAL\n$31.69\nCASH TENDERED\nThank you!",
+      "parse": "| HILLTOP GROCERY |\n|---|\n| Provo, UT\n August 17,2026 7:33 PM |\n| Wrench set, metric 24.99 |\n| Coffee, drip, large 3.20 |\n| Sticker pack 3.50 |\n| TOTAL $31.69 |\n| CASH TENDERED Thank you! |"
+    },
+    {
+      "file": "page-037.png",
+      "label": "Receipt - Polar Freeze Ice Cream (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$49.68",
+        "Store name": "Polar Freeze Ice Cream",
+        "Card last four digits": "7745"
+      },
+      "ocr": "POLAR FREEZEICE CREAM\nProvo\uff0cUT\nNovember 21\uff0c2026 7:55 PM\nStickerpack\n3.50\nLatte\uff0coat milk\n5.75\nWrench set\uff0cmetric\n24.99\nTrail mix,1 lb\n8.99\nWafflecone\uff0cdouble\n6.45\nTOTAL\n$49.68\nVISA\n****7745\nAPPROVED\nThank you!",
+      "parse": "POLAR FREEZE ICE CREAM\n\nProvo, UT  November 21, 2026 7:55 PM\n\n| Sticker pack | 3.50 |\n|---|---|\n| Latte, oat milk | 5.75 |\n| Wrench set, metric | 24.99 |\n| Trail mix, 1 lb | 8.99 |\n| Waffle cone, double | 6.45 |\n\nTOTAL $49.68\n\nVISA \\*\\*\\*\\*7745 APPROVED\n\nThank you!"
+    },
+    {
+      "file": "page-038.png",
+      "label": "Order - Meridian Equipment Rental (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order number; Order total; Ship-to city. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order number": "SO-370254",
+        "Order total": "$37,998.42",
+        "Ship-to city": "Bend"
+      },
+      "ocr": "ORDERCONFIRMATION\nSO-370254\nSupplier\nMeridian EquipmentRental\nOrder date\nNovember11,2026\nShip by\nNovember14,2026\nStatus\nOn hold\nBillto\nShip.to\n3665HarborBlvd,Columbus,OH43219\n8469JuniperDr,Bend,OR97701\nItem\nDescription\nQty\nUnit\nAmount\nVLV-208\nCheck valve, brass\n115\n48.90\n5,623.50\nGSK-2210\nGasketset,EPDM\n109\n14.60\n1,591.40\nALU-3300\nAluminumbracket,anodized\n8\n22.40\n179.20\nPLT-0904\nSteelbaseplate,6mm\n106\n288.72\n30,604.32\nTotalunits:338\nOrder.total\n$37,998.42\nQuestions?Call(555)0170-5353orwritetoorders@meridian.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-370254**\n\nSupplier Meridian Equipment Rental\n\nOrder date November 11, 2026\n\nShip by November 14, 2026\n\nStatus On hold\n\nBill to 3665 Harbor Blvd, Columbus, OH 43219\n\nShip to 8469 Juniper Dr, Bend, OR 97701\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| VLV-208 | Check valve, brass | 115 | 48.90 | 5,623.50 |\n| GSK-2210 | Gasket set, EPDM | 109 | 14.60 | 1,591.40 |\n| ALU-3300 | Aluminum bracket, anodized | 8 | 22.40 | 179.20 |\n| PLT-0904 | Steel base plate, 6 mm | 106 | 288.72 | 30,604.32 |\n\nTotal units: 338\n\nOrder total $37,998.42\n\nQuestions? Call (555) 0170-5353 or write to orders@meridian.example."
+    },
+    {
+      "file": "page-039.png",
+      "label": "Receipt - Summit Outfitters (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits; Cashier name. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$35.62",
+        "Store name": "Summit Outfitters",
+        "Card last four digits": "9051",
+        "Cashier name": "not found"
+      },
+      "ocr": "SUMMITOUTFITTERS\nDenver\uff0cco\nMarch 1,2026 2:32 PM\nSticker pack\n3.50\nTrail mix, 1 lb\n8.99\nDuct tape\n5.49\nWaffle cone\uff0cdouble\n6.45\nPaperback\uff0cused\n7.99\nDay-old bagels x3\n3.20\nTOTAL\n$35.62\nVISA\n****9051\nAPPROVED\nThank you!",
+      "parse": "| \\multicolumn{2}{c}{SUMMIT OUTFITTERS} |  |\n|---|---|\n| \\multicolumn{2}{c}{Denver, CO\n March 1, 2026 2:32 PM} |  |\n| Sticker pack | 3.50 |\n| Trail mix, 1 lb | 8.99 |\n| Duct tape | 5.49 |\n| Waffle cone, double | 6.45 |\n| Paperback, used | 7.99 |\n| Day-old bagels x3 | 3.20 |\n| TOTAL | $35.62 |\n| VISA \\*\\*\\*\\*9051 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-040.png",
+      "label": "Invoice - Bluecrest Office Supply (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice number; Total due; Vendor name; Invoice date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice number": "INV-48239",
+        "Total due": "$2,447.91",
+        "Vendor name": "Bluecrest Office Supply",
+        "Invoice date": "January 11, 2026"
+      },
+      "ocr": "BLUECRESTOFFICESUPPLY\nINVOICE\nBill.to\nInvoice no.\nINV-48239\nRuben Reyes LLP\nInvoice date\nJanuary11,2026\nDue date\nJanuary26,2026\nPO number\nPO-87589\nDescription\nQty\nUnit price\nAmount\nErgonomicdeskchair\n9\n189.00\n1,701.00\nHDMI cable,10ft,10-pack\n7\n55.90\n391.30\nNitrile gloves,case of1000\n4\n64.80\n259.20\nSubtotal\n$2,351.50\nTax (4.1%)\n$96.41\nTotal due\n$2,447.91\nPayment terms:Net 15.Make checks payable to Bluecrest OfficeSupply.",
+      "parse": "# BLUECREST OFFICE SUPPLY INVOICE\n\nBill to\n\n**Ruben Reyes LLP**\n\nInvoice no. INV-48239\n\nInvoice date January 11, 2026\n\nDue date January 26, 2026\n\nPO number PO-87589\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Ergonomic desk chair | 9 | 189.00 | 1,701.00 |\n| HDMI cable, 10 ft, 10-pack | 7 | 55.90 | 391.30 |\n| Nitrile gloves, case of 1000 | 4 | 64.80 | 259.20 |\n\nSubtotal $2,351.50\n\nTax (4.1%) $96.41\n\nTotal due $2,447.91\n\nPayment terms: Net 15. Make checks payable to Bluecrest Office Supply."
+    },
+    {
+      "file": "page-041.png",
+      "label": "Invoice - Apex Packaging Corp. (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Due date; Invoice number; Vendor name. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Due date": "November 19, 2025",
+        "Invoice number": "INV-61500",
+        "Vendor name": "Apex Packaging Corp."
+      },
+      "ocr": "APEXPACKAGINGCORP.\nTAXINVOICE\n5016MillRaceLn,Augusta,GA30901\nBill to\nInvoice no.\nSilverbell Logistics LLC\nINV-61500\nInvoice date\nOctober17,2025\nDue date\nNovember19,202\nPOnumber\nPO-67577\nDescription\nQty\nUnit price\nAmount\nLED panel light,2x4\n2\n89.25\n178.50\nShipping labels,4x6, 8 rolls\n7\n32.20\n225.40\nHDMIcable,10ft,10-pack\n6\n55.90\n335.40\nToner cartridge,black\n5\n118.00\n590.00\nSubtotal\n$1,329.30\nTax (7.0%)\n$93.05\nTotal due\n$1,422.35\nPayment terms:Net 30.Make checks payable toApexPackaging Corp..",
+      "parse": "**APEX PACKAGING CORP.**\n\nTAX INVOICE\n\n5016 Mill Race Ln, Augusta, GA 30901\n\nBill to\n\n**Silverbell Logistics LLC**\n\nInvoice no. INV-61500\n\nInvoice date October 17, 2025\n\nDue date November 19, 2024\n\nPO number PO-67577\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| LED panel light, 2\u00d74 | 2 | 89.25 | 178.50 |\n| Shipping labels, 4x6, 8 rolls | 7 | 32.20 | 225.40 |\n| HDMI cable, 10 ft, 10-pack | 6 | 55.90 | 335.40 |\n| Toner cartridge, black | 5 | 118.00 | 590.00 |\n\nSubtotal $1,329.30\n\nTax (7.0%) $93.05\n\nTotal due $1,422.35\n\nPayment terms: Net 30. Make checks payable to Apex Packaging Corp..."
+    },
+    {
+      "file": "page-042.png",
+      "label": "Order - Larkspur Equipment Rental (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order total; Ship-to city; Order status. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order total": "$5,846.60",
+        "Ship-to city": "Toledo",
+        "Order status": "On hold"
+      },
+      "ocr": "SALESORDER\nSO-682813\nSupplier\nLarkspurEquipmentRental\nOrderdate\nJune 2,2026\nShip by\nJune 17,2026\nStatus\nOnhold\nBillto\n4720FoundryRd,Erie,PA16501\nShip to\n2900HarborBlvd,Toledo,OH43604\nItem\nDescription\nQty\nUnit\nAmount\nVLV-208\nCheck valve, brass\n15\n48.90\n733.50\nHSE-077\nHydraulic hose, 2 m\n52\n54.10\n2,813.20\nALU-3300\nAluminumbracket,anodized\n17\n22.40\n380.80\nCBL-914.\nControl cable,5m\n77\n21.70\n1,670.90\nGSK-2210\nGasket set,EPDM\n17\n14.60\n248.20\nTotal units: 178\nOrdertotal\n$5,846.60\nQuestions?Call(555)0159-9204orwrite toorders@larkspur.example.",
+      "parse": "**SALES ORDER SO-682813**\n\n<u>Supplier</u> **Larkspur Equipment Rental**\n\nOrder date June 2, 2026\n\nShip by June 17, 2026\n\nStatus On hold\n\nBill to 4720 Foundry Rd, Erie, PA 16501\n\nShip to 2900 Harbor Blvd, Toledo, OH 43604\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| VLV-208 | Check valve, brass | 15 | 48.90 | 733.50 |\n| HSE-077 | Hydraulic hose, 2 m | 52 | 54.10 | 2,813.20 |\n| ALU-3300 | Aluminum bracket, anodized | 17 | 22.40 | 380.80 |\n| CBL-914 | Control cable, 5 m | 77 | 21.70 | 1,670.90 |\n| GSK-2210 | Gasket set, EPDM | 17 | 14.60 | 248.20 |\n\nTotal units: 178\n\nOrder total $5,846.60\n\nQuestions? Call (555) 0159-9204 or write to orders@larkspur.example."
+    },
+    {
+      "file": "page-043.png",
+      "label": "Chart - Website visits by day (thousands) (rough scan)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Peak day; Value printed at the peak. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Website visits by day (thousands)",
+        "Peak day": "Thu",
+        "Value printed at the peak": "95"
+      },
+      "ocr": "Website visits by day (thousands)\n95\nMon\nTue\nWed\nThu\nFri\nSat\nSun",
+      "parse": "Website visits by day (thousands)"
+    },
+    {
+      "file": "page-044.png",
+      "label": "Order - Silverbell Print Works",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Ship-to city; Ship by date; Order status; Tracking number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Ship-to city": "Duluth",
+        "Ship by date": "March 27, 2026",
+        "Order status": "On hold",
+        "Tracking number": "not found"
+      },
+      "ocr": "SALESORDER\nSO-884071\nSupplier\nSilverbellPrintWorks\nOrder date\nMarch 21, 2026\nShip by\nMarch 27, 2026\nStatus\nOn hold\nBill to\nShip to\n293DepotStreet,Fresno,CA93701\n5210DepotStreet,Duluth,MN55802\nItem\nDescription\nQty\nUnit\nAmount\nPLT-0904\nSteel base plate, 6 mm\n06\n288.72\n25,984.80\nFST-1108\nFastener kit, M6\n67\n9.80\n656.60\nALU-3300\nAluminumbracket,anodized\n106\n22.40\n2,374.40\nBRG-5521\nBall bearing, sealed\n77\n33.20\n2,556.40\nCBL-914\nControl cable, 5 m\n30\n21.70\n651.00\nTotal units: 370\nOrder total\n$32,223.20\nQuestions? Call(555) 0181-1455 or write to orders@silverbell.example.",
+      "parse": "**SALES ORDER**\n\n**SO-884071**\n\nSupplier **Silverbell Print Works**\n\nOrder date March 21, 2026\n\nShip by March 27, 2026\n\nStatus On hold\n\nBill to\n\n293 Depot Street, Fresno, CA 93701\n\nShip to\n\n5210 Depot Street, Duluth, MN 55802\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| PLT-0904 | Steel base plate, 6 mm | 90 | 288.72 | 25,984.80 |\n| FST-1108 | Fastener kit, M6 | 67 | 9.80 | 656.60 |\n| ALU-3300 | Aluminum bracket, anodized | 106 | 22.40 | 2,374.40 |\n| BRG-5521 | Ball bearing, sealed | 77 | 33.20 | 2,556.40 |\n| CBL-914 | Control cable, 5 m | 30 | 21.70 | 651.00 |\n\nTotal units: 370\n\nOrder total $32,223.20\n\nQuestions? Call (555) 0181-1455 or write to orders@silverbell.example."
+    },
+    {
+      "file": "page-045.png",
+      "label": "Receipt - Corner Cafe (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$55.13",
+        "Store name": "Corner Cafe",
+        "Card last four digits": "7659"
+      },
+      "ocr": "CORNER CAFE\nErie,PA\nNovember 2\uff0c2026 6:34 PM\n3.50\nSticker pack\n5.75\nLatte,oat milk\n6.90\nCarnitastacox2\n24.99\nWrench set\uff0cmetric\n5.49\nDucttape\nsalad\n8.50\nHouse\nTOTAL\n$55.13\nVISA\n****7659\nAPPROVED\nThank you!",
+      "parse": "# CORNER CAFE\n\nErie, PA\nNovember 2, 2026 6:34 PM\n\n| Sticker pack | 3.50 |\n|---|---|\n| Latte, oat milk | 5.75 |\n| Carnitas taco x2 | 6.90 |\n| Wrench set, metric | 24.99 |\n| Duct tape | 5.49 |\n| House salad | 8.50 |\n| TOTAL | $55.13 |\n| VISA \\*\\*\\*\\*\\*7659 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-046.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.1: parties and date",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Bluecrest National Bank",
+        "Borrower name": "Cascade Office Supply",
+        "Agreement date": "July 20, 2025"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage 1 of 3\nTERMLOANAGREEMENT\nand between Bluecrest National Bank,a banking corporation organized under the\nlaws of the State of Oregon (the \"Lender\"), and Cascade Office Supply, a company\n\"Borrower\").\nTheBorrowerrepresentsthatthefinancialstatementsdelivered totheLenderfairly\nsincethedateofthosestatements.\nTheBorrower shall maintaininsurance on the collateral in amounts and against risks\ncustomarilycarriedbycompaniesengagedinsimilarbusinesses,namingtheLender\naslosspayee.\nAllnoticesunderthisAgreementshallbedeliveredinwritingtotheaddressesset\nposting by certified mail.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 1 of 3\n\n## TERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of July 20, 2025, by and between Bluecrest National Bank, a banking corporation organized under the laws of the State of Oregon (the \"Lender\"), and Cascade Office Supply, a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail."
+    },
+    {
+      "file": "page-047.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.2: loan terms",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$501,209.36",
+        "Interest rate": "7.8%",
+        "Number of monthly installments": "84"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage2of 3\nARTICLEII-THELOAN\nSubjecttothe termsof thisAgreement,theLenderagreesto advance to the\n7.8%, computed on the basis of a 360-day year, and shall be repayable in 84 equal\nmonthlyinstallments,withthefinalinstallment dueonOctober20,2025(the\n\"MaturityDate\").\npreparation,negotiation,and execution of this Agreement, except as expressly\nprovided herein.\nTimeisof theessencewithrespecttoeveryobligationoftheBorrower under this\nAgreement and eachrelated loan documentexecuted inconnectionherewith.\npresentitsfinancial condition and thatnomaterial adversechangehas occurred\nsincethedateof thosestatements.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 2 of 3\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $501,209.36 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 7.8%, computed on the basis of a 360-day year, and shall be repayable in 84 equal monthly installments, with the final installment due on October 20, 2025 (the \"Maturity Date\").\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements."
+    },
+    {
+      "file": "page-048.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.3: covenants",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "4%",
+        "Governing law state": "Oregon"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage3of 3\nARTICLEV-COVENANTSANDDEFAULT\nAnyinstallment notreceivedwithin tendaysof itsdue dateshall incuralate charge\nequal to 4%of theoverdue amount.ThisAgreement shallbegovernedbyand\nconstrued in accordance with thelaws of the State of Oregon,without regard to its\nconflict of laws principles.\nTheBorrower represents that the financial statements delivered to the Lender fairly\nsince the date of those statements.\nTheBorrowershallmaintaininsuranceonthe collateral in amounts andagainstrisks\ncustomarilycarriedbycompaniesengagedinsimilarbusinesses,namingtheLender\naslosspayee.\ns\noperate as awaiver thereof.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 3 of 3\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 4% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Oregon, without regard to its conflict of laws principles.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof."
+    },
+    {
+      "file": "page-049.png",
+      "label": "Receipt - Fixit Hardware (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$50.88",
+        "Store name": "Fixit Hardware",
+        "Card last four digits": "3861"
+      },
+      "ocr": "FIXIT HARDWARE\nErie,PA\n0ctober 4,2026 4:09 PM\nHousesalad\n8.50\nPaperback\uff0cused\n7.99\nCarnitastacox2\n6.90\nBouquet\uff0cseasonal\n18.50\nTrail mix\uff0c1 lb\n8.99\nTOTAL\n$50.88\nVISA\n****3861\nAPPROVED\nThank you!",
+      "parse": "| FIXIT HARDWARE |\n|---|\n| Erie, PA\n October 4, 2026 4:09 PM |\n| House salad 8.50 |\n| Paperback, used 7.99 |\n| Carnitas taco x2 6.90 |\n| Bouquet, seasonal 18.50 |\n| Trail mix, 1 lb 8.99 |\n| TOTAL $50.88 |\n| VISA \\*\\*\\*\\*3861 APPROVED |\n| Thank you! |"
+    },
+    {
+      "file": "page-050.png",
+      "label": "Phone message (handwritten) (rough scan)",
+      "question": "This is a handwritten phone message slip. Extract these fields exactly as printed: Caller name; Callback number; Time of call. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Caller name": "Omar Lindqvist",
+        "Callback number": "(555) 0132-6662",
+        "Time of call": "5:30 PM"
+      },
+      "ocr": "WHILEYOU WERE OUT\nFor:\nPubenCaotellano\nFrom:\nOmarfindaviat\nOf:\nJtoneyate BiatrilutionHroup\nPhone:\n(555) 0132-6662\nTime:\n5:30@M\nMessage:\nneedo theaigned contract",
+      "parse": "WHILE YOU WERE OUT\n\n|  |  |\n|---|---|\n|  | For: Ruben Castellano |\n|  | From: Omar Lindqvist |\n|  | Of: Stonegate Distribution Group |\n|  | Phone: (555) 0132-6662 |\n|  | Time: 5:30 PM |\n|  | Message: needs the signed contract |"
+    },
+    {
+      "file": "page-051.png",
+      "label": "To-do list (handwritten) (rough scan)",
+      "question": "This is a handwritten to-do list; checked boxes are completed. Extract these fields exactly as printed: List title; Total items; Completed (checked) items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "List title": "Saturday jobs",
+        "Total items": "8",
+        "Completed (checked) items": "1"
+      },
+      "ocr": "Saturdayjobs\noil change\npack toolbox\nFix gate latch\nreturn library books\nclean gutters\nrenew insurance\npatch drywall\nwater heater flush",
+      "parse": "## Saturday jobs\n\n| \u2612 oil change |\n|---|\n| \u2610 pack toolbox |\n| \u2610 fix gate latch |\n| \u2610 return library books |\n| \u2610 clean gutters |\n| \u2610 renew insurance |\n| \u2610 patch drywall |\n| \u2610 water heater flush |"
+    },
+    {
+      "file": "page-052.png",
+      "label": "Maintenance request form (rough scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Unit; Reported by; Priority (checked box); Date reported. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Unit": "42B",
+        "Reported by": "Marta Novak",
+        "Priority (checked box)": "Low",
+        "Date reported": "November 16, 2026"
+      },
+      "ocr": "TENANTMAINTENANCEREQUEST\nMeridianPropertyManagement\nUnit\nReported by\n42B\nMarta Novak\nDatereported\nIssue\nNovember 16, 2026\nBathroom fan rattles\nPriority\n Low\nNormal\nUrgent\nEntry permission granted:YES/ NO",
+      "parse": "TENANT MAINTENANCE REQUEST\n\nMeridian Property Management\n\nUnit\n\nReported by\n\nDate reported\n\nIssue\n\nPriority\n\n\u2717 Low\n\n\u2610 Normal\n\n\u2610 Urgent\n\nEntry permission granted: YES / NO"
+    },
+    {
+      "file": "page-053.png",
+      "label": "Chart - Larkspur monthly revenue ($ thousands) (rough scan)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Tallest bar month; Value printed above the Oct bar. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Larkspur monthly revenue ($ thousands)",
+        "Tallest bar month": "Jan",
+        "Value printed above the Oct bar": "124"
+      },
+      "ocr": "Larkspur monthly revenue ($ thousands)\n200\n171\n158\n150\n143\n136\n124\n100\n93\n75\n54\n50\nOct\nNov\nDec\nJan\nFeb\nMar\nApr\nMay",
+      "parse": ""
+    },
+    {
+      "file": "page-054.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.1: parties and date (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Bluecrest National Bank",
+        "Borrower name": "Redbud Components Inc.",
+        "Agreement date": "December 21, 2026"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage1of3\nTERMLOANAGREEMENT\nThis TermLoan Agreement(the\"Agreement\")is entered into as of December 21,\n2026,by and betweenBluecrestNational Bank,abanking corporationorganized\nunderthelawsof theState of Minnesota(the\"Lender\"),and Redbud Components\nInc.,acompanyhavingitsprincipalplaceofbusinessassetoutonthesignature\npage(the\"Borrower\").\nTheBorrowerrepresentsthatthefinancialstatementsdeliveredto.theLenderfairly\npresentitsfinancial conditionandthatnomaterial adversechangehasoccurred\nsincethedateofthosestatements.\nEachpartyshallbearitsowncostsand expensesincurred inconnectionwiththe\npreparation,negotiation,andexecutionofthisAgreement,exceptasexpressly\nprovidedherein.\nNoamendmentorwaiverof anyprovisionof thisAgreementshallbeeffectiveunless\nmadeinwriting and signed bybothparties,and nofailure toexercise anyrightshall\noperateasawaiverthereof.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 1 of 3\n\nTERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of December 21, 2026, by and between Bluecrest National Bank, a banking corporation organized under the laws of the State of Minnesota (the \"Lender\"), and Redbud Components Inc., a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof."
+    },
+    {
+      "file": "page-055.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.2: loan terms (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$499,741.76",
+        "Interest rate": "8.9%",
+        "Number of monthly installments": "84"
+      },
+      "ocr": "Page2of3\nBLUECRESTNATIONALBANK\nARTICLEII-THELOAN\nSubjectto thetermsof thisAgreement,theLenderagreesto advancetothe\nBorrowera termloanin theprincipalamountof$499,741.76(the\"Loan\").TheLoan\nshallbearinterestontheoutstandingprincipalbalanceatafixedannualrateof\n8.9%,computed onthebasisof a360-dayyear,and shallberepayablein84equal\nmonthlyinstallments,withthefinalinstallmentdueonMarch21,2027(the\"Maturity\nDate\").\nIfanyprovisionofthisAgreementisheldtobeinvalidorunenforceable\uff0cthe\nremainingprovisions shall continueinfull force and effect,andthepartiesshall\nnegotiateingoodfaithasubstituteprovision.\nEachpartyshall bearitsowncosts and expensesincurredinconnectionwiththe\npreparation,negotiation,and executionof thisAgreement,except asexpressly\nprovidedherein.\nAll noticesunderthisAgreementshallbedelivered inwriting totheaddressesset\noutonthesignaturepageandshallbedeemedreceivedthreebusinessdaysafter\nposting by certified mail.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 2 of 3\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $499,741.76 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 8.9%, computed on the basis of a 360-day year, and shall be repayable in 84 equal monthly installments, with the final installment due on March 21, 2027 (the \"Maturity Date\").\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein.\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail."
+    },
+    {
+      "file": "page-056.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.3: covenants (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "4%",
+        "Governing law state": "Minnesota"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage3of3\nARTICLEV-COVENANTSANDDEFAULT\nAny.installmentnotreceivedwithintendaysof itsdue.dateshall incuralatecharge\nequal to4%of theoverdueamount.ThisAgreementshallbegovernedby and\nconstruedinaccordancewiththelawsoftheStateofMinnesota,withoutregardto\nitsconflictoflawsprinciples.\nAllnoticesunderthisAgreementshallbedeliveredinwritingtotheaddressesset\noutonthesignaturepageandshall bedeemedreceived threebusinessdaysafter\npostingbycertifiedmail.\nTime isoftheessencewithrespectto everyobligationof theBorrowerunderthis\nAgreementandeachrelatedloandocumentexecutedinconnectionherewith.\nTheBorrowerrepresentsthatthefinancialstatementsdeliveredtotheLenderfairly\npresentitsfinancialconditionandthatnomaterialadversechangehasoccurred\nsincethedate.ofthosestatements.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 3 of 3\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 4% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Minnesota, without regard to its conflict of laws principles.\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements."
+    },
+    {
+      "file": "page-057.png",
+      "label": "Loan agreement - Northwind Community Bank, p.1: parties and date (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Northwind Community Bank",
+        "Borrower name": "Pinnacle Packaging Corp.",
+        "Agreement date": "April 20, 2026"
+      },
+      "ocr": "NORTHWINDCOMMUNITYBANK\nPage1of3\nTERMLOANAGREEMENT\nThis TermLoan Agreement(the\"Agreement\") is entered into as ofApril 20,2026,by\nandbetweenNorthwindCommunityBank,abankingcorporationorganizedunder\nthe laws of theState of Oregon(the\"Lender\"),and Pinnacle Packaging Corp.,a\ncompanyhaving itsprincipalplace ofbusiness assetouton the signaturepage(the\n\"Borrower\").\nIfanyprovisionof thisAgreementisheldtobeinvalid orunenforceable,the\nremaining provisions shall continue infull force and effect,and theparties shall\nnegotiate in good faith a substitute provision.\nTimeisof theessencewithrespecttoevery obligationof.theBorrowerunderthis\nAgreementandeachrelatedloandocumentexecutedinconnectionherewith.\nEachpartyshallbearitsowncostsandexpensesincurred inconnectionwiththe\npreparation,negotiation,andexecutionof thisAgreement,exceptasexpressly\nprovidedherein.",
+      "parse": "**NORTHWIND COMMUNITY BANK** Page 1 of 3\n\nTERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of April 20, 2026, by and between Northwind Community Bank, a banking corporation organized under the laws of the State of Oregon (the \"Lender\"), and Pinnacle Packaging Corp., a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein."
+    },
+    {
+      "file": "page-058.png",
+      "label": "Loan agreement - Northwind Community Bank, p.2: loan terms (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$139,799.02",
+        "Interest rate": "7.3%",
+        "Number of monthly installments": "48"
+      },
+      "ocr": "Page2of3\nNORTHWINDCOMMUNITYBANK\nARTICLEII-THELOAN\nSubjecttothetermsofthisAgreement,theLenderagreestoadvancetothe\nBorrowera termloan intheprincipal amountof $139,799.02(the\"Loan\").The Loan\nshallbearinterestontheoutstanding.principalbalanceatafixedannualrateof\n7.3%,computed onthebasisof a360-dayyear,and shallbe repayable in48equal\nmonthlyinstallments,with the finalinstallment due onJune 12,2026(the\"Maturity\nDate\").\nAll.noticesunderthisAgreementshallbedeliveredinwritingtotheaddressesset\nout onthesignaturepage and shallbedeemed received threebusinessdaysafter\npostingbycertifiedmail.\nIfanyprovisionofthisAgreementisheldtobeinvalidorunenforceable\uff0cthe\nremaining provisions shall continue in full force and effect,and the partiesshall\nnegotiateingoodfaithasubstituteprovision.\nNoamendmentorwaiver of anyprovisionof thisAgreementshall beeffectiveunless\nmadeinwriting andsignedbybothparties,andnofailuretoexerciseany.rightshall\noperateasawaiverthereof.",
+      "parse": "**NORTHWIND COMMUNITY BANK** Page 2 of 3\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of \u00a7139,799.02 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 7.3%, computed on the basis of a 360-day year, and shall be repayable in 48 equal monthly installments, with the final installment due on June 12, 2026 (the \"Maturity Date\").\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail.\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof."
+    },
+    {
+      "file": "page-059.png",
+      "label": "Loan agreement - Northwind Community Bank, p.3: covenants (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "3%",
+        "Governing law state": "Oregon"
+      },
+      "ocr": "NORTHWINDCOMMUNITYBANK\nPage3of3\nARTICLEV-COVENANTSANDDEFAULT\nAny installment notreceived within ten days of its duedate shall incuralate charge\nequalto3%of theoverdueamount.ThisAgreementshallbegovernedby and\nconstruedinaccordancewiththelawsoftheStateofOregon,withoutregardtoits\nconflictoflawsprinciples.\nTheBorrowershallmaintaininsuranceonthecollateral in amountsand againstrisks\ncustomarilycarriedbycompaniesengaged insimilarbusinesses,namingtheLender\naslosspayee.\nTheBorrowerrepresentsthatthefinancialstatementsdeliveredtotheLenderfairly\npresent itsfinancial conditionand that no material adverse changehas occurred\nsincethedateof thosestatements.\nIfanyprovisionof thisAgreementisheld tobeinvalidor unenforceable,the\nremaining provisions shall continue infull force and effect,and thepartiesshall\nnegotiateingoodfaithasubstituteprovision.",
+      "parse": "**NORTHWIND COMMUNITY BANK** Page 3 of 3\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 3% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Oregon, without regard to its conflict of laws principles.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision."
+    },
+    {
+      "file": "page-060.png",
+      "label": "Order - Larkspur Distribution Group (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order status; Order number; Ship by date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order status": "Processing",
+        "Order number": "SO-646136",
+        "Ship by date": "December 24, 2026"
+      },
+      "ocr": "SALES ORDER\nSO-646136\nSupplier\nLarkspur Distribution Group\nOrderdate\nDecember9,2026\nShip by\nDecember24,2026\nStatus\nProcessing\nBill to\nShip to\n6479SummitAve,Toledo,OH43604\n6353CanneryRow,Salem,OR97301\nItem\nDescription\nQty\nUnit\nAmount\nGSK-2210\nGasketset,EPDM\n43\n14.60\n627.80\nCBL-914\nControl cable,5m\n45\n21.70\n976.50\nTotal units: 88\nOrdertotal\n$1,604.30\nQuestions?Call(555)0161-5118 or write toorders@larkspur.example.",
+      "parse": "SALES ORDER\n\nSO-646136\n\nSupplier **Larkspur Distribution Group**\n\nOrder date **December 9, 2026**\n\nShip by **December 24, 2026**\n\nStatus **Processing**\n\nBill to \n6479 Summit Ave, Toledo, OH 43604\n\nShip to \n6353 Cannery Row, Salem, OR 97301\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| GSK-2210 | Gasket set, EPDM | 43 | 14.60 | 627.80 |\n| CBL-914 | Control cable, 5 m | 45 | 21.70 | 976.50 |\n\nTotal units: 88\n\nOrder total $1,604.30\n\nQuestions? Call (555) 0161-5118 or write to orders@larkspur.example."
+    },
+    {
+      "file": "page-061.png",
+      "label": "Order - Northwind Office Supply (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Total units; Order number; Ship-to city; Ship by date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total units": "152",
+        "Order number": "SO-115295",
+        "Ship-to city": "Columbus",
+        "Ship by date": "February 11, 2026"
+      },
+      "ocr": "SO-115295\nSALESORDER\nSupplier.\nNorthwind OfficeSupply\nOrder date\nFebruary6,2026\nShipby\nFebruary11,2026\nStatus\nProcessing\nShip to\nBill.to\n5998.SummitAve,Columbus,OH43219\n6863SummitAve,Fresno,CA93701\nQty\nUnit\nAmount\nItem\nDescription\n8\n33.20\n265.60\nBRG-5521\nBallbearing,sealed\n114\n14.60\n1,664.40\nGSK-2210\nGasket set,EPDM\n22\n21.70\n477.40\nCBL-914\nControl cable,5m\n8\n9.80\n78.40\nFST-1108\nFastenerkit,M6\nOrder total\n$2,485.80\nTotal units: 152\nQuestions?Call(555)0164-2086orwritetoorders@northwind.example.",
+      "parse": "SALES ORDER\n\nSO-115295\n\n<u>Supplier</u> **Northwind Office Supply**\n\n<u>Order date</u> **February 6, 2026**\n\n<u>Ship by</u> **February 11, 2026**\n\n<u>Status</u> **Processing**\n\nBill to\n\n6863 Summit Ave, Fresno, CA 93701\n\nShip to\n\n5998 Summit Ave, Columbus, OH 43219\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| BRG-5521 | Ball bearing, sealed | 8 | 33.20 | 265.60 |\n| GSK-2210 | Gasket set, EPDM | 114 | 14.60 | 1,664.40 |\n| CBL-914 | Control cable, 5 m | 22 | 21.70 | 477.40 |\n| FST-1108 | Fastener kit, M6 | 8 | 9.80 | 78.40 |\n\nTotal units: 152\n\nOrder total $2,485.80\n\nQuestions? Call (555) 0164-2086 or write to orders@northwind.example."
+    },
+    {
+      "file": "page-062.png",
+      "label": "Loan agreement - Northwind Community Bank, p.1: parties and date (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Northwind Community Bank",
+        "Borrower name": "Silverbell Logistics LLC",
+        "Agreement date": "August 13, 2026"
+      },
+      "ocr": "Page1of4\nNORTHWINDCOMMUNITYBANK\nTERMLOANAGREEMENT\nThisTermLoan Agreement(the\"Agreement\")is entered into asofAugust13,2026,\nbyandbetweenNorthwind CommunityBank,abanking corporationorganized under\nthe laws of the State of Minnesota(theLender),and SilverbellLogisticsLLC,a\ncompanyhaving itsprincipal place of business asset out on the signaturepage(the\n\"Borrower\").\nIf.anyprovision.ofthisAgreementisheldtobeinvalidorunenforceable,the\nremainingprovisionsshall continueinfullforce and effect,and thepartiesshall\nnegotiateingoodfaithasubstituteprovision.\nNo amendmentorwaiverofanyprovisionof this Agreementshall beeffectiveunless\nmadeinwriting and signed bybothparties,andnofailureto exercise anyright shall\noperateasawaiverthereof.\nEachpartyshallbearitsown costs and expensesincurred inconnectionwith the\npreparation,negotiation,andexecutionof thisAgreement,exceptasexpressly\nprovidedherein.",
+      "parse": "**NORTHWIND COMMUNITY BANK** Page 1 of 4\n\nTERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of August 13, 2026, by and between Northwind Community Bank, a banking corporation organized under the laws of the State of Minnesota (the \"Lender\"), and Silverbell Logistics LLC, a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein."
+    },
+    {
+      "file": "page-063.png",
+      "label": "Loan agreement - Northwind Community Bank, p.2: loan terms (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$113,651.19",
+        "Interest rate": "9.3%",
+        "Number of monthly installments": "60"
+      },
+      "ocr": "Page2of4\nNORTHWINDCOMMUNITYBANK\nARTICLEII-THELOAN\nSubjecttothetermsofthisAgreement,theLenderagreestoadvancetothe\nBorrowera term loan in theprincipalamountof $113,651.19(the\"Loan\").TheLoan\nshallbearinterestonthe outstandingprincipalbalance atafixed annualrate of\n9.3%,computedonthebasis.of a360-dayyear,and shallberepayable in60equal\nmonthlyinstallments,with thefinalinstallment dueonOctober17,2026(the\n\"MaturityDate\").\nIfanyprovisionof thisAgreementisheldtobeinvalidorunenforceable,the\nremainingprovisionsshallcontinueinfullforceandeffect,and thepartiesshall\nnegotiateingoodfaithasubstituteprovision.\nTheBorrowershallmaintaininsuranceonthecollateralinamountsand againstrisks\naslosspayee.\nTheBorrowerrepresentsthatthefinancial statements delivered totheLenderfairly\npresentitsfinancialcondition and thatnomaterial adversechangehasoccurred\nsincethedateofthose statements.",
+      "parse": "**NORTHWIND COMMUNITY BANK**\nPage 2 of 4\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $113,651.19 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 9.3%, computed on the basis of a 360-day year, and shall be repayable in 60 equal monthly installments, with the final installment due on October 17, 2026 (the \"Maturity Date\").\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements."
+    },
+    {
+      "file": "page-064.png",
+      "label": "Loan agreement - Northwind Community Bank, p.3: covenants (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "5%",
+        "Governing law state": "Minnesota"
+      },
+      "ocr": "NORTHWINDCOMMUNITYBANK\nPage3of4\nARTICLEV-COVENANTSANDDEFAULT\nAnyinstallmentnot receivedwithin.tendaysof itsduedateshall incuralatecharge\nequal to5%of theoverdueamount.ThisAgreementshallbegovernedby and\nconstruedinaccordancewiththelawsoftheStateofMinnesota,withoutregard to\nitsconflict.oflawsprinciples.\nTheBorrowerrepresentsthatthefinancialstatementsdelivered totheLenderfairly\npresentitsfinancialcondition and thatnomaterial adversechangehasoccurred\nsincethedateof thosestatements.\nEachpartyshallbearitsowncosts andexpensesincurredinconnectionwiththe\npreparation,negotiation,andexecutionofthisAgreement,exceptasexpressly\nprovidedherein.\nNoamendmentorwaiverof anyprovisionof thisAgreementshall beeffectiveunless\nmadeinwriting and signedbybothparties,andnofailure toexercise anyrightshall\noperate.asawaiverthereof.",
+      "parse": "**NORTHWIND COMMUNITY BANK** Page 3 of 4\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 5% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Minnesota, without regard to its conflict of laws principles.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof."
+    },
+    {
+      "file": "page-065.png",
+      "label": "Loan agreement - Northwind Community Bank, p.4: signatures (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender signatory name; Borrower signatory name. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender signatory name": "Marta Aldrich",
+        "Borrower signatory name": "Tessa Castellano"
+      },
+      "ocr": "NORTHWIND COMMUNITYBANK\nPage 4 of 4\nINWITNESSWHEREOF,thepartieshaveexecutedthisAgreement.\nLENDER:\nNorthwindCommunityBank\nMarta aldrick\nName:Marta Aldrich\nTitle:SeniorLoanOfficer\nBORROWER:\nSilverbell LogisticsLLC\nJepxa Castellano\nName:Tessa Castellano\nTitle:Managing Director",
+      "parse": "NORTHWIND COMMUNITY BANK Page 4 of 4\n\nIN WITNESS WHEREOF, the parties have executed this Agreement.\n\n**LENDER:**\n\nNorthwind Community Bank\n\nName: Marta Aldrich\n\nTitle: Senior Loan Officer\n\n# BORROWER:\n\nSilverbell Logistics LLC\n\nName: Tessa Castellano\n\nTitle: Managing Director"
+    },
+    {
+      "file": "page-066.png",
+      "label": "Lab report - Kestrel Clinical Laboratory",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Patient; Collected; Glucose result; Accession. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Patient": "Deshawn Novak",
+        "Collected": "June 22, 2026",
+        "Glucose result": "122",
+        "Accession": "ACC-220570"
+      },
+      "ocr": "KESTRELCLINICALLABORATORY\nLaboratoryreport\nPatient\nDeshawnNovak\nAccession\nACC-220570\nDate of birth\nMay 4,1955\nCollected\nJune22,2026\nTest\nResult\nUnits\nReference\nGlucose\n122\nmg/dL\n70-99\nHemoglobin\n11.1\n7p/6\n13.5-17.5\nWBC\n4.5\n10~3/uL\n4.5-11.0\nCholesterol\n233\nmg/dL\n<200",
+      "parse": "# KESTREL CLINICAL LABORATORY\n\nLaboratory report\n\n| Patient | Deshawn Novak | Accession | ACC-220570 |\n|---|---|---|---|\n| Date of birth | May 4, 1955 |  |  |\n| Collected | June 22, 2026 |  |  |\n\n| **Test** | **Result** | **Units** | **Reference** |\n|---|---|---|---|\n| Glucose | 122 | mg/dL | 70-99 |\n| Hemoglobin | 11.1 | g/dL | 13.5-17.5 |\n| WBC | 4.5 | 10^3/uL | 4.5-11.0 |\n| Cholesterol | 233 | mg/dL | < 200 |"
+    },
+    {
+      "file": "page-067.png",
+      "label": "Receipt - Fixit Hardware (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$30.20",
+        "Store name": "Fixit Hardware",
+        "Card last four digits": "4707"
+      },
+      "ocr": "FIXITHARDWARE\nFresno,CA\nMay 3,2026 12:14 PM\nDay-old bagels x3\n3.20\nBouquet\uff0cseasonal\n18.50\nHouse salad\n8.50\nTOTAL\n$30.20\nVISA\n****4707\nAPPROVED\nThank you!",
+      "parse": "| FIXIT HARDWARE |\n|---|\n| Fresno, CA\n May 3, 2026 12:14 PM |\n| Day-old bagels x3 3.20 |\n| Bouquet, seasonal 18.50 |\n| House salad 8.50 |\n| TOTAL $30.20 |\n| VISA \\*\\*\\*\\*4707 APPROVED |\n| Thank you! |"
+    },
+    {
+      "file": "page-068.png",
+      "label": "Job application - Kestrel Industrial Parts (hard scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Applicant name; Position applied for; Employment type (checked box); Desired pay. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Applicant name": "Marta Reyes",
+        "Position applied for": "Office Manager",
+        "Employment type (checked box)": "Part-time",
+        "Desired pay": "$36.00 / hour"
+      },
+      "ocr": "KESTRELINDUSTRIALPARTS\nEmploymentapplication\nFull'name\nPhone\nMarta Reyes\n(555\uff09 0150-9747\nPosition.appliedfor\nDesired pay\nOffice Manager\n$36.00/ hour\nAvailablestartdate\nSeptember 21\uff0c2026\nEmployment type\nFull-time.\nPart-time\nI certifythe information.aboveis accurate\nSignature\nmarta Peyea",
+      "parse": "# KESTREL INDUSTRIAL PARTS\n\nEmployment application\n\nFull name\n\nMarta Reyes\n\nPosition applied for\n\nOffice Manager\n\nAvailable start date\n\nSeptember 21, 2026\n\nEmployment type\n\nFull-time\n\nPart-time\n\nPhone\n\n(555) 0150-9747\n\nDesired pay\n\n$36.00 / hour\n\nI certify the information above is accurate.\n\nSignature"
+    },
+    {
+      "file": "page-069.png",
+      "label": "Phone message (handwritten) (hard scan)",
+      "question": "This is a handwritten phone message slip. Extract these fields exactly as printed: Caller name; Callback number; Time of call. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Caller name": "Priya Boone",
+        "Callback number": "(555) 0139-2740",
+        "Time of call": "5:30 PM"
+      },
+      "ocr": "WHILE YOU WERE OUT\nPeteferreira\nFor!\nFrom:\nPriya Boone\nHarkopurboyiotico\nOf:\n(555) 0134-2740\nPhone:\n5.30@m\nTime:\nwill truy again tomorroto\nMessage:",
+      "parse": "WHILE YOU WERE OUT\n\n|  |  |\n|---|---|\n| For: Pete Ferreira |  |\n| From: Priya Boone |  |\n| Of: Larkapur Logistics LLC |  |\n| Phone: (555) 0139-2740 |  |\n| Time: 5:30 PM |  |\n| Message: will try again tomorrow |  |"
+    },
+    {
+      "file": "page-070.png",
+      "label": "Employee record - Larkspur Foods Inc. (rough scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Employee ID; Hire date; Annual salary; Reports to. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee ID": "E-5500",
+        "Hire date": "March 12, 2020",
+        "Annual salary": "$96,746.58",
+        "Reports to": "Noor Calloway"
+      },
+      "ocr": "LARKSPUR FOODS INC.\nEmployee record - confidential\nIngrid Boone\nEmployee\nE-5500\nEmployee ID\nDispatch\nDepartment\nHire date\nMarch12,2020\nNoorCalloway\nReports to\nAnnual.salary\n$96,746.58\nActive\nStatus\nLocation\nMesa",
+      "parse": "LARKSPUR FOODS INC. Employee record - confidential\n\n| Employee | Ingrid Boone |\n|---|---|\n| Employee ID | E-5500 |\n| Department | Dispatch |\n| Hire date | March 12, 2020 |\n| Reports to | Noor Calloway |\n| Annual salary | $96,746.58 |\n| Status | Active |\n| Location | Mesa |"
+    },
+    {
+      "file": "page-071.png",
+      "label": "Meeting notes (handwritten)",
+      "question": "This is a page of handwritten meeting notes. Extract these fields exactly as printed: Meeting date; Number of action items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Meeting date": "June 2, 2026",
+        "Number of action items": "4"
+      },
+      "ocr": "Copperfield launch - notes\nJune 2, 2026\nDiscussed:\nstaging env still Flaky\n- hire two more testers\n- vendor demo went fine\nAction items:\n1. Marcus: update the forecast\n2. Deshawh: sehd the invoice\n3. Hank: send the invoice\n4. Amara: send the invoice",
+      "parse": "## Copperfield launch \u2013 notes\n\n| June 2, 2026 |\n|---|\n| **Discussed:**\n- staging env still flaky\n- hire two more testers\n- vendor demo went fine\nAction items:\n1. Marcus: update the forecast\n2. Deshawn: send the invoice\n3. Hank: send the invoice\n4. Amara: send the invoice |"
+    },
+    {
+      "file": "page-072.png",
+      "label": "Invoice - Redbud Office Supply (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Vendor name; Invoice date; Total due; Invoice number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Vendor name": "Redbud Office Supply",
+        "Invoice date": "August 1, 2025",
+        "Total due": "$3,173.89",
+        "Invoice number": "INV-34255"
+      },
+      "ocr": "REDBUDOFFICE SUPPLY\nINVOICE\nInvoice no.\nINV-34255\nBill to\nInvoicedate.\nAugust 1,2025\nMeridianPackagingCorp.\nDue date\nSeptember3,202\nPOnumber\nPO-68324\nQty\nUnit price\nAmount\nDescription\n8.\n189.00\n1,512.00\nErgonomicdeskchair\n11\n46.75\n514.25\nBreakroomcoffee,51b\n6\n55.90\n335.40\nHDMI cable,10 ft,10-pack\n4\n13.50\n54.00\nWhiteboard markers,12-pack\n10\n51.50\n515.00\nPacking tape,36-roll case\nSubtotal\n$2,930.65\nTax (8.3%)\n$243.24\nTotal due\n$3,173.89\nPayment terms:Net30.MakecheckspayabletoRedbud OfficeSupply.",
+      "parse": "**REDBUD OFFICE SUPPLY**\n\nINVOICE\n\nBill to\n\nMeridian Packaging Corp.\n\nInvoice no. INV-34255\n\nInvoice date August 1, 2025\n\nDue date September 3, 202\n\nPO number PO-68324\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Ergonomic desk chair | 8 | 189.00 | 1,512.00 |\n| Break room coffee, 5 lb | 11 | 46.75 | 514.25 |\n| HDMI cable, 10 ft, 10-pack | 6 | 55.90 | 335.40 |\n| Whiteboard markers, 12-pack | 4 | 13.50 | 54.00 |\n| Packing tape, 36-roll case | 10 | 51.50 | 515.00 |\n\nSubtotal $2,930.65\n\nTax (8.3%) $243.24\n\nTotal due $3,173.89\n\nPayment terms: Net 30. Make checks payable to Redbud Office Supply."
+    },
+    {
+      "file": "page-073.png",
+      "label": "Phone message (handwritten)",
+      "question": "This is a handwritten phone message slip. Extract these fields exactly as printed: Caller name; Callback number; Time of call. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Caller name": "Ruben Aldrich",
+        "Callback number": "(555) 0189-1653",
+        "Time of call": "11:50 AM"
+      },
+      "ocr": "WHILE YOU WERE OUT\nFor:\nAmara Boone\nFrom:\nRuben Aldrich\nOf:\nCakeshore Manufacturing Co.\nPhone:\n(555) 0189-1653\nTime:\n11:50 AM\nMessage:\nwilltry again tomorrow",
+      "parse": "**WHILE YOU WERE OUT**\n\n|  |  |\n|---|---|\n| For: Amara Boone |  |\n| From: Ruben Aldrich |  |\n| Of: Lakeshore Manufacturing Co. |  |\n| Phone: (555) 0189-1653 |  |\n| Time: 11:50 AM |  |\n| Message: will try again tomorrow |  |"
+    },
+    {
+      "file": "page-074.png",
+      "label": "Lab report - Northwind Clinical Laboratory (hard scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Patient; Collected; Glucose result; Accession. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Patient": "Ivan Lindqvist",
+        "Collected": "February 9, 2026",
+        "Glucose result": "154",
+        "Accession": "ACC-344882"
+      },
+      "ocr": "NORTHWIND CLINICAL LABORATORY\nLaboratory.report\nPatient.\nIvanLindqvist\nAccession\nACC-344882\nDate ofbirth\nJune9,1968\nCollected\nFebruary9,2026\nTest\nResult\nUnits\nReference\nGlucose\n154\nmg/dL\n70-99\nHemoglobin\n12.7\ng/dL\n13.5-17.5\nWBC\n5.8\n10~3/uL\n4.5-11.0\nCholesterol\n257\nmg/dL\n<200",
+      "parse": "NORTHWIND CLINICAL LABORATORY\n\nLaboratory report\n\n| Patient | Ivan Lindqvist | Accession |\n|---|---|---|\n| Date of birth | June 9, 1968 | ACC-344882 |\n| Collected | February 9, 2026 |  |\n\n| **Test** | **Result** | **Units** | **Reference** |\n|---|---|---|---|\n| Glucose | 154 | mg/dL | 70-99 |\n| Hemoglobin | 12.7 | g/dL | 13.5-17.5 |\n| WBC | 5.8 | 10^3/uL | 4.5-11.0 |\n| Cholesterol | 257 | mg/dL | < 200 |"
+    },
+    {
+      "file": "page-075.png",
+      "label": "Loan agreement - Copperfield Trust Company, p.1: parties and date",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Copperfield Trust Company",
+        "Borrower name": "Cascade Equipment Rental",
+        "Agreement date": "March 14, 2026"
+      },
+      "ocr": "COPPERFIELDTRUSTCOMPANY\nPage 1 of 2\nTERMLOANAGREEMENT\nThis Term Loan Agreement (the\"Agreement\") is entered into as of March 14, 2026,\nthelaws of the State of Ohio(the \"Lender\"),and Cascade Equipment Rental,a\n\"Borrower\").\nTheBorrowerrepresents thatthefinancial statements delivered to theLenderfairly\nsince the dateofthose statements.\nTheBorrowershallmaintaininsuranceonthe collateral inamounts andagainstrisks\ncustomarilycarriedbycompaniesengagedinsimilarbusinesses,namingtheLender\naslosspayee.\nTimeisoftheessencewithrespecttoeveryobligationoftheBorrower under this\nAgreementandeachrelatedloandocumentexecutedinconnectionherewith.",
+      "parse": "**COPPERFIELD TRUST COMPANY** Page 1 of 2\n\n## TERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of March 14, 2026, by and between Copperfield Trust Company, a banking corporation organized under the laws of the State of Ohio (the \"Lender\"), and Cascade Equipment Rental, a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith."
+    },
+    {
+      "file": "page-076.png",
+      "label": "Loan agreement - Copperfield Trust Company, p.2: loan terms",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$576,631.90",
+        "Interest rate": "5.1%",
+        "Number of monthly installments": "24"
+      },
+      "ocr": "COPPERFIELDTRUSTCOMPANY\nPage2of 2\nARTICLEII-THELOAN\nSubject to the termsof thisAgreement,theLenderagrees to advance tothe\nmonthlyinstallments,with thefinalinstallment due onApril 10,2026(the\"Maturity\nDate\").\nAllnoticesunderthisAgreementshallbedeliveredinwritingtotheaddressesset\nposting by certified mail.\nTheBorrowershallmaintaininsuranceonthe collateral in amounts andagainstrisks\ncustomarily carried by companies engaged in similar businesses, naming the Lender\naslosspayee.\nIf any provision of this Agreement isheld tobe invalid orunenforceable,the\nremainingprovisionsshall continueinfullforce and effect,and thepartiesshall\nnegotiateingoodfaithasubstituteprovision.",
+      "parse": "# COPPERFIELD TRUST COMPANY Page 2 of 2\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $576,631.90 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 5.1%, computed on the basis of a 360-day year, and shall be repayable in 24 equal monthly installments, with the final installment due on April 10, 2026 (the \"Maturity Date\").\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision."
+    },
+    {
+      "file": "page-077.png",
+      "label": "Invoice - Brightwell Packaging Corp.",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: PO number; Vendor name; Due date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "PO number": "PO-97124",
+        "Vendor name": "Brightwell Packaging Corp.",
+        "Due date": "November 23, 2025"
+      },
+      "ocr": "BRIGHTWELLPACKAGINGCORP.\nTAX INVOICE\n199 Harbor Blvd,Mesa,AZ 85201\nInvoice no.\nINV-56333\nBill to\nColin Beaumont LLP\nInvoice date\nOctober 6,2025\nDue date\nNovember23,202\nPO number\nPO-97124\nDescription\nQty\nUnit price\nAmount\nFolding table, 6 ft\n6\n78.50\n471.00\nErgonomicdesk chair\n11\n189.00\n2,079.00\nSteel shelving unit, 72 in\n3\n244.00\n732.00\nCopy paper, letter,10-ream case\n10\n42.50\n425.00\nLED panel light, 2x4\n3\n89.25\n267.75\nSubtotal\n$3,974.75\nTax (8.1%)\n$321.95\nTotal due\n$4,296.70\nPayment terms: Net 45. Make checks payable to Brightwell Packaging Corp..",
+      "parse": "**BRIGHTWELL PACKAGING CORP.**\n\nTAX INVOICE\n\n199 Harbor Blvd, Mesa, AZ 85201\n\nBill to\n\n**Colin Beaumont LLP**\n\nInvoice no. INV-56333\n\nInvoice date October 6, 2025\n\nDue date November 23, 2024\n\nPO number PO-97124\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Folding table, 6 ft | 6 | 78.50 | 471.00 |\n| Ergonomic desk chair | 11 | 189.00 | 2,079.00 |\n| Steel shelving unit, 72 in | 3 | 244.00 | 732.00 |\n| Copy paper, letter, 10-ream case | 10 | 42.50 | 425.00 |\n| LED panel light, 2x4 | 3 | 89.25 | 267.75 |\n\nSubtotal $3,974.75\n\nTax (8.1%) $321.95\n\nTotal due $4,296.70\n\nPayment terms: Net 45. Make checks payable to Brightwell Packaging Corp.."
+    },
+    {
+      "file": "page-078.png",
+      "label": "Chart - Website visits by day (thousands)",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Peak day; Value printed at the peak. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Website visits by day (thousands)",
+        "Peak day": "Tue",
+        "Value printed at the peak": "96"
+      },
+      "ocr": "Website visits by day (thousands)\n96\nMon\nTue\nWed\nnul\nSat\nSun",
+      "parse": ""
+    },
+    {
+      "file": "page-079.png",
+      "label": "Chart - Regional market share, 2026",
+      "question": "This page shows a chart; read it visually. Extract these fields exactly as printed: Chart title; Largest share company; Share shown for Larkspur; Data source. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Chart title": "Regional market share, 2026",
+        "Largest share company": "Harborline",
+        "Share shown for Larkspur": "22%",
+        "Data source": "not found"
+      },
+      "ocr": "Regional market share, 2026\nBluecrest-23%\nFairbanks-24%\nLarkspur - 22%\nHarborline - 31%",
+      "parse": "Regional market share, 2026"
+    },
+    {
+      "file": "page-080.png",
+      "label": "Order - Fairbanks Office Supply",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order status; Order number; Order total; Ship by date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order status": "Shipped",
+        "Order number": "SO-990666",
+        "Order total": "$33,598.28",
+        "Ship by date": "June 28, 2026"
+      },
+      "ocr": "ORDERCONFIRMATION\nSO-990666\nSupplier\nFairbanksOfficeSupply\nOrder date\nJune22,2026\nShip by\nJune28,2026\nStatus\nShipped\nBill to\nShip to\n1309DepotStreet,Bend,OR97701\n9242Juniper Dr,Columbus,OH 43219\nItem\nDescription\nQty\nUnit\nAmount\nBRG-5521\nBall bearing, sealed\n59\n33.20\n1,958.80\nCBL-914\nControl cable,5 m\n114\n21.70\n2,473.80\nPLT-0904\nSteel base plate, 6 mm\n66\n288.72\n28,583.28\nALU-3300\nAluminum bracket,anodized\n26\n22.40\n582.40\nTotalunits: 298\nOrder total\n$33,598.28\nQuestions? Call(555) 0157-6636 or write to orders@fairbanks.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-990666**\n\nSupplier Fairbanks Office Supply\n\nOrder date June 22, 2026\n\nShip by June 28, 2026\n\nStatus Shipped\n\nBill to\n\n1309 Depot Street, Bend, OR 97701\n\nShip to\n\n9242 Juniper Dr, Columbus, OH 43219\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| BRG-5521 | Ball bearing, sealed | 59 | 33.20 | 1,958.80 |\n| CBL-914 | Control cable, 5 m | 114 | 21.70 | 2,473.80 |\n| PLT-0904 | Steel base plate, 6 mm | 99 | 288.72 | 28,583.28 |\n| ALU-3300 | Aluminum bracket, anodized | 26 | 22.40 | 582.40 |\n\nTotal units: 298\n\nOrder total $33,598.28\n\nQuestions? Call (555) 0157-6636 or write to orders@fairbanks.example."
+    },
+    {
+      "file": "page-081.png",
+      "label": "Invoice - Brightwell Industrial Parts (paid stamp) (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Total due; Invoice number; PO number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total due": "$5,209.65",
+        "Invoice number": "INV-45400",
+        "PO number": "PO-49969"
+      },
+      "ocr": "BRIGHTWELLINDUSTRIALPARTS\nTAXINVOICE\n4517Harbor Blvd,Erie,PA 16501\nBill to\nInvoice no.\nSilverbell ComponentsInc.\nINV-45400\nInvoice date\nAugust20,2025\nDue date.\nSeptember7,202\nPOnumber\nPO-49969\nDescription\nQty\nUnit price\nAmount\nToner cartridge, black\n2\n118.00\n236.00\nFolding table,6ft\n1\n78.50\n78.50\nHDMIcable,10ft,10-pack\n3\n55.90\n167.70\nSteel shelvingunit,72in\n9\n244.00\n2,196.00\nErgonomic deskchair\n11\n189.00\n2,079.00\nBreakroomcoffee,5Ib\n2\n46.75\n93.50\nSubtotal\n,850.70\nTax (.7.4%)\n$358.95\nTotal due\n$5,209.65\nPAID\nPaymentterms:Net15.MakecheckspayabletoBrightwell IndustrialParts.",
+      "parse": "TAX INVOICE\n\n**BRIGHTWELL INDUSTRIAL PARTS**\n\n4517 Harbor Blvd, Erie, PA 16501\n\nBill to\n\n**Silverbell Components Inc.**\n\nInvoice no.  **INV-45400**\n\nInvoice date  **August 20, 2025**\n\nDue date  **September 7, 202**\n\nPO number  **PO-49969**\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Toner cartridge, black | 2 | 118.00 | 236.00 |\n| Folding table, 6 ft | 1 | 78.50 | 78.50 |\n| HDMI cable, 10 ft, 10-pack | 3 | 55.90 | 167.70 |\n| Steel shelving unit, 72 in | 9 | 244.00 | 2,196.00 |\n| Ergonomic desk chair | 11 | 189.00 | 2,079.00 |\n| Break room coffee, 5 lb | 2 | 46.75 | 93.50 |\n\nSubtotal $4,850.70\n\nTax (7.4%) $358.95\n\nTotal due $5,209.65\n\nPAID\n\nPayment terms: Net 15. Make checks payable to Brightwell Industrial Parts."
+    },
+    {
+      "file": "page-082.png",
+      "label": "Order - Northwind Packaging Corp.",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order number; Total units; Order total; Ship-to city; Tracking number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order number": "SO-832513",
+        "Total units": "114",
+        "Order total": "$2,739.10",
+        "Ship-to city": "Fresno",
+        "Tracking number": "not found"
+      },
+      "ocr": "SALESORDER\nSO-832513\nSupplier\nNorthwind Packaging Corp.\nOrder date\nJanuary20,2026\nShip by\nFebruary3,2026\nStatus\nOn hold\nBill to\nShip to\n1774MillRaceLn,Provo,UT84601\n6464AlderCourt,Fresno,CA93701\nItem\nDescription\nQty\nUnit\nAmount\nVLV-208\nCheck valve,brass\n1\n48.90\n342.30\nALU-3300\nAluminum bracket,anodized\n107\n22.40\n2,396.80\nTotal units: 114\nOrder total\n$2,739.10\nQuestions? Call (555) 0145-8173 or write to orders@northwind.example.",
+      "parse": "**SALES ORDER**\n\n**SO-832513**\n\nSupplier **Northwind Packaging Corp.**\n\nOrder date **January 20, 2026**\n\nShip by **February 3, 2026**\n\nStatus **On hold**\n\nBill to\n\n1774 Mill Race Ln, Provo, UT 84601\n\nShip to\n\n6464 Alder Court, Fresno, CA 93701\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| VLV-208 | Check valve, brass | 7 | 48.90 | 342.30 |\n| ALU-3300 | Aluminum bracket, anodized | 107 | 22.40 | 2,396.80 |\n\nTotal units: 114\n\nOrder total $2,739.10\n\nQuestions? Call (555) 0145-8173 or write to orders@northwind.example."
+    },
+    {
+      "file": "page-083.png",
+      "label": "Receipt - Fixit Hardware (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$14.20",
+        "Store name": "Fixit Hardware",
+        "Card last four digits": "7717"
+      },
+      "ocr": "FIXIT HARDWARE\nFresno,CA\nMay 28, 2026 7:02 AM\nPie slice\uff0ccherry\n5.25\nLatte\uff0coat milk\n5.75\nCoffee\uff0cdrip\uff0clarge\n3.20\nTOTAL\n$14.20\nVISA\n****7717\nAPPROVED\nThank you!",
+      "parse": "# FIXIT HARDWARE\n\nFresno, CA\nMay 28, 2026 7:02 AM\n\n| Pie slice, cherry | 5.25 |\n|---|---|\n| Latte, oat milk | 5.75 |\n| Coffee, drip, large | 3.20 |\n| TOTAL | $14.20 |\n| VISA \\*\\*\\*\\*\\*7717 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-084.png",
+      "label": "Invoice - Brightwell Logistics LLC (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Vendor name; Invoice number; Invoice date; Total due. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Vendor name": "Brightwell Logistics LLC",
+        "Invoice number": "INV-73957",
+        "Invoice date": "September 22, 2026",
+        "Total due": "$1,399.87"
+      },
+      "ocr": "BRIGHTWELLLOGISTICSLLC\nINVOICE\n8953 CanneryRow,Fresno,CA 93701\nBill to\nInvoice no.\nINV-73957\nSofieCallowayLLP\nInvoicedate\nSeptember 22,20\nDue date\nOctober24,2026\nPOnumber\nPO-28203\nDescription\nQty\nUnit price\nAmount\nNitrile gloves,case of1000\n6\n64.80\n583.20\nWhiteboard markers,12-pack\n8\n13.50\n108.00\nBreakroomcoffee,5 Ib\n5\n46.75\n233.75\nFolding table,6ft\n3\n78.50\n235.50\nHDMI cable,10 ft,10-pack\n3\n55.90\n167.70\nSubtotal\n$1,328.15\nTax (5.4%)\n$71.72\nTotal due\n$1,399.87\nPayment terms:Net.30.Make checks payable toBrightwell LogisticsLLC.",
+      "parse": "**BRIGHTWELL LOGISTICS LLC**\n\nINVOICE\n\n8953 Cannery Row, Fresno, CA 93701\n\nBill to\n\nSofie Calloway LLP\n\nInvoice no.\n\nINV-73957\n\nInvoice date\n\nSeptember 22, 20\n\nDue date\n\nOctober 24, 2026\n\nPO number\n\nPO-28203\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Nitrile gloves, case of 1000 | 9 | 64.80 | 583.20 |\n| Whiteboard markers, 12-pack | 8 | 13.50 | 108.00 |\n| Break room coffee, 5 lb | 5 | 46.75 | 233.75 |\n| Folding table, 6 ft | 3 | 78.50 | 235.50 |\n| HDMI cable, 10 ft, 10-pack | 3 | 55.90 | 167.70 |\n\nSubtotal $1,328.15\n\nTax (5.4%) $71.72\n\nTotal due $1,399.87\n\nPayment terms: Net 30. Make checks payable to Brightwell Logistics LLC."
+    },
+    {
+      "file": "page-085.png",
+      "label": "Meeting notes (handwritten) (rough scan)",
+      "question": "This is a page of handwritten meeting notes. Extract these fields exactly as printed: Meeting date; Number of action items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Meeting date": "January 1, 2026",
+        "Number of action items": "3"
+      },
+      "ocr": "Northwind rollout - hotes\nJanuary 1, 2026\nDiscussed:\nbudget is tight until Q3\n- heed sign-off From legal\n-. staging env still flaky\nAction items:\n1. Omar: review the deck\n2. Colin: update the forecast\n3. Pete: review the deck",
+      "parse": "Northwind rollout - notes\n\nJanuary 1, 2026\n\nDiscussed:\n\n- budget is tight until Q3\n\n- need sign-off from legal\n\n- staging env still flaky\n\nAction items:\n\n1. Omar: review the deck\n\n2. Colin: update the forecast\n\n3. Pete: review the deck"
+    },
+    {
+      "file": "page-086.png",
+      "label": "Meeting notes (handwritten)",
+      "question": "This is a page of handwritten meeting notes. Extract these fields exactly as printed: Meeting date; Number of action items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Meeting date": "December 9, 2026",
+        "Number of action items": "3"
+      },
+      "ocr": "Silverlelelaunch-noteo\nBecemler9,2026\nBiocuoxed\n-need sign-offfrom legal\nataging envatill glaky\n-vendordemo-went Jine\naction itemo\n1.Rulen:draJtthememo\n2.marta:reviewthe deck\n3. Colin: look the room",
+      "parse": "Silverbell launch - notes December 9, 2026\n\n**Discussed:**\n\n\\- need sign-off from legal\n\n\\- staging env still flaky\n\n\\- vendor demo went fine\n\nAction items:\n\n1. Cuben: draft the memo\n\n2. Marta: review the deck\n\n3. Colin: book the room"
+    },
+    {
+      "file": "page-087.png",
+      "label": "To-do list (handwritten) (rough scan)",
+      "question": "This is a handwritten to-do list; checked boxes are completed. Extract these fields exactly as printed: List title; Total items; Completed (checked) items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "List title": "Saturday jobs",
+        "Total items": "5",
+        "Completed (checked) items": "4"
+      },
+      "ocr": "laturday jobe\nPoharpenmower llade\nPlackuplaotop\nBpacktoollot\nPorderliltera\nJiy gate lateh",
+      "parse": "Saturday jobs\n\n\u2611 sharpen mower blade\n\n\u2610 back up laptop\n\n\u2610 pack toolbox\n\n\u2610 order filters\n\n\u2610 fix gate latch"
+    },
+    {
+      "file": "page-088.png",
+      "label": "Job application - Silverbell Foods Inc. (rough scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Applicant name; Position applied for; Employment type (checked box); Desired pay. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Applicant name": "Ivan Rhee",
+        "Position applied for": "Line Cook",
+        "Employment type (checked box)": "Full-time",
+        "Desired pay": "$39.00 / hour"
+      },
+      "ocr": "SILVERBELLFOODSINC.\nEmployment application\nFullname\nPhone\nIvan Rhee\n(555) 0172-7637\nPosition applied for\nDesired pay\nLine Cook\n$39.00 / hour\nAvailablestartdate\nAugust 27, 2026\nEmploymenttype\n Full-time\nPart-time\nIcertifytheinformationaboveisaccurate.\nSignature\nJuan Rhee",
+      "parse": "**SILVERBELL FOODS INC.**\n\nEmployment application\n\nFull name\n\nPosition applied for\n\nAvailable start date\n\nEmployment type\n\nFull-time\n\nPart-time\n\nI certify the information above is accurate.\n\nSignature"
+    },
+    {
+      "file": "page-089.png",
+      "label": "To-do list (handwritten) (hard scan)",
+      "question": "This is a handwritten to-do list; checked boxes are completed. Extract these fields exactly as printed: List title; Total items; Completed (checked) items. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "List title": "Shop tasks",
+        "Total items": "6",
+        "Completed (checked) items": "1"
+      },
+      "ocr": "Shop tasks\nreturn library books\nwater heater flush\nfix gate latch\nrenew insurance\nclean gutters\ndrop off donations",
+      "parse": "## Shop tasks\n\n| \u2612 return library books |\n|---|\n| \u2610 water heater flush |\n| \u2610 fix gate latch |\n| \u2610 renew insurance |\n| \u2610 clean gutters |\n| \u2610 drop off donations |"
+    },
+    {
+      "file": "page-090.png",
+      "label": "Invoice - Quarry Office Supply (paid stamp)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Vendor name; Due date; Total due; Invoice number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Vendor name": "Quarry Office Supply",
+        "Due date": "August 25, 2026",
+        "Total due": "$2,987.38",
+        "Invoice number": "INV-44313"
+      },
+      "ocr": "QUARRYOFFICE SUPPLY\nINVOICE\n604 Harbor Blvd, Columbus, OH 43219\nInvoice no.\nINV-44313\nBill to\nGavin Whitfield LLP\nInvoice date\nJuly8,2026\nDue date\nAugust 25,2026\nPO number\nPO-88892\nDescription\nQty\nUnit price\nAmount\nNitrile gloves,case of 1000\n4\n64.80\n259.20\nCopy paper, letter, 10-ream case\n4\n42.50\n170.00\nSteel shelving unit, 72 in\n2\n244.00\n488.00\nPacking tape,36-roll case\n7\n51.50\n360.50\nBreak room coffee, 5 Ib\n6\n46.75\n280.50\nToner cartridge, black\n10\n118.00\n1,180.00\nSubtotal\n$2,738.20\nTax (9.1%)\n$249.18\nTotal due\n$2,987.38\nPAID\nPayment terms: Net 45. Make checks payable to Quarry Office Supply.",
+      "parse": "INVOICE\n\n**QUARRY OFFICE SUPPLY**\n\n604 Harbor Blvd, Columbus, OH 43219\n\nBill to\n\nGavin Whitfield LLP\n\nInvoice no. INV-44313\n\nInvoice date July 8, 2026\n\nDue date August 25, 2026\n\nPO number PO-88892\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Nitrile gloves, case of 1000 | 4 | 64.80 | 259.20 |\n| Copy paper, letter, 10-ream case | 4 | 42.50 | 170.00 |\n| Steel shelving unit, 72 in | 2 | 244.00 | 488.00 |\n| Packing tape, 36-roll case | 7 | 51.50 | 360.50 |\n| Break room coffee, 5 lb | 6 | 46.75 | 280.50 |\n| Toner cartridge, black | 10 | 118.00 | 1,180.00 |\n\nSubtotal $2,738.20\n\nTax (9.1%) $249.18\n\nTotal due $2,987.38\n\nPayment terms: Net 45. Make checks payable to Quarry Office Supply."
+    },
+    {
+      "file": "page-091.png",
+      "label": "Work order WO-2026-1366",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Completed (checked) steps; Total steps; Priority; Work order number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Completed (checked) steps": "3",
+        "Total steps": "5",
+        "Priority": "Low",
+        "Work order number": "WO-2026-1366"
+      },
+      "ocr": "WORK ORDER\nW0-2026-1366\nQuarry Facilities\nAssigned to\nNoor Strand\nAsset\nAHU-11\nPriority\nLow\nDue date\nJune8,2026\nChecklist (checked = complete):\nIsolatepoweratpanel\nTorquemountingbolts\nPhotograph nameplate\nClearintakescreen\nGrease bearings\nTechnician notes: parts on hand, no downtime expected.",
+      "parse": "| WORK ORDER | WO-2026-1366 |\n|---|---|\n\nQuarry Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nNoor Strain\n\nLow\n\nJune 8, 2026\n\nAsset\n\nAHU-11\n\nChecklist (checked = complete):\n\nIsolate power at panel\n\nTorque mounting bolts\n\nPhotograph nameplate\n\nClear intake screen\n\nGrease bearings\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-092.png",
+      "label": "Work order WO-2022-5979",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Due date; Priority; Work order number; Total steps. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Due date": "May 3, 2026",
+        "Priority": "Emergency",
+        "Work order number": "WO-2022-5979",
+        "Total steps": "7"
+      },
+      "ocr": "WORK ORDER\nWO-2022-5979\nCascadeFacilities\nAssigned to\nMarta Ferreira\nAsset\nAHU-05\nPriority\nEmergency\nDue date\nMay 3,2026\nChecklist (checked = complete):\nReplace worn belt\nTorquemounting bolts\nClear intake screen\nGrease bearings\nTestrun15minutes\nUpdate service tag\nPhotograph nameplate\nTechnician notes: parts on hand, no downtime expected.",
+      "parse": "# WORK ORDER\n\n**WO-2022-5979**\n\nCascade Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nMarta Ferreira\n\nEmergency\n\nMay 3, 2026\n\nAsset\n\nAHU-05\n\nChecklist (checked = complete):\n\nReplace worn belt\n\nTorque mounting bolts\n\nClear intake screen\n\nGrease bearings\n\nTest run 15 minutes\n\nUpdate service tag\n\nPhotograph nameplate\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-093.png",
+      "label": "Loan agreement - Harborline Credit Union, p.1: parties and date (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Harborline Credit Union",
+        "Borrower name": "Stonegate Packaging Corp.",
+        "Agreement date": "November 12, 2025"
+      },
+      "ocr": "HARBORLINE CREDITUNION\nPage 1 of 4\nTERMLOANAGREEMENT\nThisTermLoan Agreement(the\"Agreement\")is entered into asof November12,\n2025,by and betweenHarborlineCreditUnion,abankingcorporationorganized\nunderthelawsof the State of Texas(the\"Lender\"),and Stonegate Packaging Corp.,\na company having itsprincipal placeofbusinessassetouton the signaturepage\n(the\"Borrower\").\nAll noticesunderthisAgreementshallbedelivered inwriting totheaddressesset\noutonthesignaturepageandshallbedeemedreceivedthreebusinessdaysafter\nposting by certified mail.\nTheBorrowershall maintaininsuranceonthecollateralinamountsand againstrisks\naslosspayee.\nNoamendmentorwaiverof anyprovisionof thisAgreementshallbeeffectiveunless\nmadeinwriting andsignedbybothparties,andnofailuretoexerciseanyrightshall\noperateasawaiverthereof.",
+      "parse": "**HARBORLINE CREDIT UNION** Page 1 of 4\n\nTERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of November 12, 2025, by and between Harborline Credit Union, a banking corporation organized under the laws of the State of Texas (the \"Lender\"), and Stonegate Packaging Corp., a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nNo amendment or waiver of any provision of this Agreement shall be effective unless made in writing and signed by both parties, and no failure to exercise any right shall operate as a waiver thereof."
+    },
+    {
+      "file": "page-094.png",
+      "label": "Loan agreement - Harborline Credit Union, p.2: loan terms (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$186,851.63",
+        "Interest rate": "8.2%",
+        "Number of monthly installments": "36"
+      },
+      "ocr": "HARBORLINE CREDITUNION\nPage2of 4\nARTICLEII-THELOAN\nSubjectto the termsof thisAgreement,theLenderagreestoadvance to the\nBorrowera termloanintheprincipalamountof$186,851.63(the\"Loan\").TheLoan\nshallbearinterest on the outstanding principal balance at afixed annual rate of\nmonthly installments,with thefinalinstallment dueonDecember20,2025(the\n\"MaturityDate\").\nTheBorrowerrepresentsthatthefinancialstatementsdeliveredtotheLenderfairly\npresentitsfinancialconditionand thatnomaterial adversechangehasoccurred\nsince the date ofthose statements.\nTime isof the essence withrespectto every obligation of theBorrower underthis\nAgreementand.eachrelatedloandocumentexecutedinconnectionherewith.\nTheBorrowershallmaintaininsuranceonthecollateral inamountsandagainstrisks\ncustomarily carried by companies engaged in similarbusinesses,naming theLender\nas losspayee.",
+      "parse": "**HARBORLINE CREDIT UNION** Page 2 of 4\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $186,851.63 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 8.2%, computed on the basis of a 360-day year, and shall be repayable in 36 equal monthly installments, with the final installment due on December 20, 2025 (the \"Maturity Date\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee."
+    },
+    {
+      "file": "page-095.png",
+      "label": "Loan agreement - Harborline Credit Union, p.3: covenants (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "5%",
+        "Governing law state": "Texas"
+      },
+      "ocr": "HARBORLINECREDITUNION\nPage3of4\nARTICLEV-COVENANTSANDDEFAULT\nAnyinstallmentnotreceivedwithintendaysof itsdue dateshall incura latecharge\nequalto5%of theoverdueamount.ThisAgreementshallbegovernedby and\nconstruedinaccordancewiththelaws oftheStateofTexas,withoutregardtoits\nconflictoflawsprinciples.\nAll noticesunderthisAgreementshallbedelivered inwritingtotheaddressesset\noutonthesignaturepageandshallbedeemedreceivedthreebusinessdaysafter\npostingbycertifiedmail.\nTheBorrowershallmaintaininsuranceonthecollateralinamountsandagainstrisks\ncustomarilycarried bycompanies engaged insimilarbusinesses,naming the Lender\naslosspayee.\nTime isof the essencewithrespecttoeveryobligationof theBorrowerunderthis\nAgreementandeachrelated loandocumentexecuted inconnectionherewith.",
+      "parse": "**HARBORLINE CREDIT UNION** Page 3 of 4\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 5% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of laws principles.\n\nAll notices under this Agreement shall be delivered in writing to the addresses set out on the signature page and shall be deemed received three business days after posting by certified mail.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith."
+    },
+    {
+      "file": "page-096.png",
+      "label": "Loan agreement - Harborline Credit Union, p.4: signatures (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender signatory name; Borrower signatory name. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender signatory name": "Ivan Calloway",
+        "Borrower signatory name": "Sofie Novak"
+      },
+      "ocr": "Page 4 of 4\nHARBORLINE CREDITUNION\nINWITNESSWHEREOF,theparties haveexecuted thisAgreement.\nLENDER:\nHarborline CreditUnion\nlvan Calloway\nName:IvanCalloway\nTitle:SeniorLoanOfficer\nBORROWER:\nStonegatePackagingCorp.\ne Novak\nName:Sofie Novak\nTitle:Managing Director",
+      "parse": "Page 4 of 4\n\n# HARBORLINE CREDIT UNION\n\nIN WITNESS WHEREOF, the parties have executed this Agreement.\n\n**LENDER:**\n\n**Harborline Credit Union**\n\nName: Ivan Calloway\n\nTitle: Senior Loan Officer\n\n**BORROWER:**\n\n**Stonegate Packaging Corp.**\n\nName: Sofie Novak\n\nTitle: Managing Director"
+    },
+    {
+      "file": "page-097.png",
+      "label": "Insurance claim - First Meridian Insurance (hard scan)",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Claim number; Policyholder; Amount claimed; Cause of loss (checked box). Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Claim number": "CLM-2021-24221",
+        "Policyholder": "Priya Boone",
+        "Amount claimed": "$3,625.57",
+        "Cause of loss (checked box)": "Hail"
+      },
+      "ocr": "FIRSTMERIDIANINSURANCE\nPropertyclaimform\nClaimnumber\nPolicyholder\nCLM-2021-24221\nPriya Boone\nDate of incident\nAmount claimied\nJanuary 22,2026\n$3,625.57\nCauseof loss\nHail\nWaterleak\nTheft\nWind\nFire\nDescribethedamage:\nDamage to the roof and two windows on the north side.",
+      "parse": "FIRST MERDIAN INSURANCE\n\nProperty claim form\n\nClaim number\n\nCLM-2021-24221\n\nDate of incident\n\nJanuary 22, 2026\n\nPolicyholder\n\nPriya Boone\n\nAmount claimed\n\n$3,625.57\n\nCause of loss\n\nHail\n\nWater leak\n\nTheft\n\nWind\n\nFire\n\nDescribe the damage:\n\nDamage to the roof and two windows on the north side."
+    },
+    {
+      "file": "page-098.png",
+      "label": "Invoice - Fairbanks Office Supply (paid stamp) (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice date; Invoice number; PO number. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice date": "October 3, 2026",
+        "Invoice number": "INV-41857",
+        "PO number": "PO-47962"
+      },
+      "ocr": "INVOICE\nFAIRBANKSOFFICESUPPLY\n3949AlderCourt,Mesa,AZ85201\nInvoice no.\nINV-41857\nBillto\nInvoicedate\nOctober3,2026\nFelixBeaumontLLP\nDue date\nNovember20,202\nPOnumber\nPO-47962\nQty\nUnit price\nAmount\nDescription\n5\n55.90\n279.50\nHDMI cable,10 ft, 10-pack\n6\n244.00\n2,196.00\nSteel shelving unit,72 in\n1\n32.20\n32.20\nShipping labels,4x6,8rolls\n5\n51.50\n257.50\nPacking tape,36-rollcase\nSubtotal\n$2,765.20\nTax (7.9%)\n$218.45\nTotal due\n$2,983.65\nPAID\nPaymentterms:Net45.Makeche\nkspavahle toFairbanksOfficeSupply.",
+      "parse": "INVOICE\n\n**FAIRBANKS OFFICE SUPPLY** 3949 Alder Court, Mesa, AZ 85201\n\nBill to\n\n**Felix Beaumont LLP**\n\nInvoice no. INV-41857\n\nInvoice date October 3, 2026\n\nDue date November 20, 2022\n\nPO number PO-47962\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| HDMI cable, 10 ft, 10-pack | 5 | 55.90 | 279.50 |\n| Steel shelving unit, 72 in | 9 | 244.00 | 2,196.00 |\n| Shipping labels, 4x6, 8 rolls | 1 | 32.20 | 32.20 |\n| Packing tape, 36-roll case | 5 | 51.50 | 257.50 |\n\nSubtotal $2,765.20\n\nTax (7.9%) $218.45\n\nTotal due $2,983.65\n\nPayment terms: Net 45. Make checks payable to Fairbanks Office Supply."
+    },
+    {
+      "file": "page-099.png",
+      "label": "Expense report - Fairbanks Logistics LLC",
+      "question": "This is a filled-in form. Extract these fields exactly as printed: Employee; Department; Total requested. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Employee": "Callie Whitfield",
+        "Department": "Finance",
+        "Total requested": "$399.48"
+      },
+      "ocr": "FAIRBANKSLOGISTICSLLC\nExpense reimbursement form\nEmployee\nDepartment\nCallie Whitfield\nFinance\nMileage\n$72.24\nMeals\n$73.78\nLodging\n$253.46\nTotal requested\n$399.48",
+      "parse": "FAIRBANKS LOGISTICS LLC\n\nExpense reimbursement form\n\n| Employee | Department |\n|---|---|\n| Callie Whitfield | Finance |\n| Mileage | $72.24 |\n| Meals | $73.78 |\n| Lodging | $253.46 |\n| Total requested | $399.48 |"
+    },
+    {
+      "file": "page-100.png",
+      "label": "Order - Copperfield Packaging Corp. (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Order total; Total units; Order status; Ship-to city. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Order total": "$4,239.50",
+        "Total units": "118",
+        "Order status": "Delivered",
+        "Ship-to city": "Denver"
+      },
+      "ocr": "ORDERCONFIRMATION\nSO-180958\nSupplier\nCopperfield Packaging Corp.\nOrderdate\nMay 13,2026\nShip by.\nMay 20, 2026\nStatus\nDelivered\nBillto\n2022SummitAve\uff0cFresno,CA93701\nShip to\n7588Cannery Row,Denver,CO80216\nItem\nDescription\nQty\nUnit\nAmount\nHSE-077\nHydraulichose,2 m\n51\n54.10\n2,759.10\nGSK-2210\nGasket set,EPDM\n40\n14.60\n584.00\nBRG-5521\nBallbearing,sealed\n27\n33.20\n896.40\nTotalunits:118\nOrdertotal\n$4,239.50\nQuestions?Call(555)0185-8257orwritetoorders@copperfield.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-180958**\n\nSupplier **Copperfield Packaging Corp.**\n\nOrder date May 13, 2026\n\nShip by May 20, 2026\n\nStatus Delivered\n\nBill to 2022 Summit Ave, Fresno, CA 93701\n\nShip to 7588 Cannery Row, Denver, CO 80216\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| HSE-077 | Hydraulic hose, 2 m | 51 | 54.10 | 2,759.10 |\n| GSK-2210 | Gasket set, EPDM | 40 | 14.60 | 584.00 |\n| BRG-5521 | Ball bearing, sealed | 27 | 33.20 | 896.40 |\n\nTotal units: 118\n\nOrder total $4,239.50\n\nQuestions? Call (555) 0185-8257 or write to orders@copperfield.example."
+    },
+    {
+      "file": "page-101.png",
+      "label": "Loan agreement - First Meridian Bank, p.1: parties and date (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "First Meridian Bank",
+        "Borrower name": "Oakhaven Print Works",
+        "Agreement date": "February 4, 2025"
+      },
+      "ocr": "Page1of2\nFIRSTMERIDIANBANK\nTERMLOANAGREEMENT\nThisTermLoan Agreement(the\"Agreement) is entered intoasofFebruary 4,2025,\nof the State ofTexas(the\"Lender\"),and OakhavenPrintWorks,a company having\nits principal place of business as set out on the signature page (the\"Borrower\").\nTheBorrowerrepresentsthatthefinancial statementsdelivered totheLenderfairly\npresentitsfinancial condition and thatnomaterial adversechange hasoccurred\nsincethedateofthosestatements.\nIfanyprovisionof thisAgreementisheld tobeinvalid orunenforceable,the\nremainingprovisionsshall continue infull force and effect,and the parties shall\nnegotiateingoodfaithasubstituteprovision.\nEachparty.shallbearitsowncosts and expenses incurred in connectionwith the\npreparation,negotiation,andexecutionof thisAgreement,exceptasexpressly\nprovidedherein.",
+      "parse": "**FIRST MERIDIAN BANK** Page 1 of 2\n\nTERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of February 4, 2025, by and between First Meridian Bank, a banking corporation organized under the laws of the State of Texas (the \"Lender\"), and Oakhaven Print Works, a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein."
+    },
+    {
+      "file": "page-102.png",
+      "label": "Loan agreement - First Meridian Bank, p.2: loan terms (hard scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$84,824.58",
+        "Interest rate": "9.3%",
+        "Number of monthly installments": "36"
+      },
+      "ocr": "Page2of2\nFIRST MERIDIAN BANK\nARTICLEII-THELOAN\nSubjecttothetermsof thisAgreement,theLenderagreestoadvancetothe\nBorrowera term.loanintheprincipalamountof$84,824.58(the\"Loan\").TheLoan\nshallbearinterestontheoutstandingprincipalbalanceatafixedannualrateof\n9.3%,computed onthebasisof a360-dayyear,and shallberepayable in36equal\nmonthlyinstallments,withthefinalinstallmentdueonMarch12,2025(the\"Maturity\nDate\").\nTimeisof the essencewithrespecttoeveryobligationof theBorrower underthis\nAgreementandeachrelated loandocumentexecuted inconnectionherewith.\nEachpartyshallbearitsowncostsandexpensesincurredinconnectionwith.the\npreparation,negotiation,andexecutionofthisAgreement,exceptasexpressly\nprovidedherein.\nTheBorrowershallmaintaininsuranceonthecollateralinamountsandagainstrisks\ncustomarilycarried bycompaniesengagedinsimilarbusinesses,namingtheLender\naslosspayee:",
+      "parse": "**FIRST MERIDIAN BANK**\nPage 2 of 2\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $84,824.58 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 9.3%, computed on the basis of a 360-day year, and shall be repayable in 36 equal monthly installments, with the final installment due on March 12, 2025 (the \"Maturity Date\").\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nEach party shall bear its own costs and expenses incurred in connection with the preparation, negotiation, and execution of this Agreement, except as expressly provided herein.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee."
+    },
+    {
+      "file": "page-103.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.1: parties and date (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Lender name; Borrower name; Agreement date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Lender name": "Bluecrest National Bank",
+        "Borrower name": "Larkspur Office Supply",
+        "Agreement date": "December 19, 2025"
+      },
+      "ocr": "Page1of3\nBLUECRESTNATIONALBANK\nTERMLOANAGREEMENT\nThisTermLoanAgreement(the\"Agreement\")isentered intoasofDecember19,\n2025,by and betweenBluecrest NationalBank,abanking corporation organized\nunder the laws of the State of Oregon(the\"Lender\"), and Larkspur Office Supply,a\ncompanyhaving itsprincipalplace ofbusinessassetoutonthesignaturepage(the\n\"Borrower\").\nTheBorrowerrepresentsthatthefinancialstatementsdelivered totheLenderfairly\npresentitsfinancial condition and thatno material adverse changehasoccurred\nsince thedateofthosestatements.\nTime.isoftheessencewithrespecttoeveryobligationoftheBorrowerunderthis\nAgreement and eachrelatedloandocumentexecuted inconnectionherewith.\nIf anyprovisionof thisAgreementisheldtobeinvalidorunenforceable\uff0cthe\nremainingprovisions shallcontinue infullforce and effect,and theparties shall\nnegotiate in goodfaith a substitute provision.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 1 of 3\n\n## TERM LOAN AGREEMENT\n\nThis Term Loan Agreement (the \"Agreement\") is entered into as of December 19, 2025, by and between Bluecrest National Bank, a banking corporation organized under the laws of the State of Oregon (the \"Lender\"), and Larkspur Office Supply, a company having its principal place of business as set out on the signature page (the \"Borrower\").\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nIf any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the parties shall negotiate in good faith a substitute provision."
+    },
+    {
+      "file": "page-104.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.2: loan terms (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Principal amount; Interest rate; Number of monthly installments. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Principal amount": "$140,619.58",
+        "Interest rate": "9.1%",
+        "Number of monthly installments": "48"
+      },
+      "ocr": "BLUECRESTNATIONALBANK\nPage2of3\nARTICLEII-THELOAN\nSubjectto the termsof thisAgreement,theLender agreestoadvancetothe\nBorrowera termloanintheprincipalamountof$140,619.58(the\"Loan\").TheLoan\nshallbearinterestontheoutstandingprincipalbalance ata fixed annualrateof\n9.1%,computedonthebasisof a360-dayyear,and shallberepayable in48equal\nmonthlyinstallments,withthe finalinstallmentdue onFebruary11,2026(the\n\"MaturityDate\").\nTimeisoftheessencewithrespectto everyobligationof theBorrowerunderthis\nAgreementandeachrelatedloandocumentexecutedinconnectionherewith.\nTheBorrowerrepresentsthatthefinancial statementsdeliveredtotheLenderfairly\npresentitsfinancial conditionandthatnomaterialadversechangehasoccurred\nsincethedateofthosestatements.\nTheBorrowershallmaintaininsuranceonthecollateralinamountsandagainstrisks\nas losspayee.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 2 of 3\n\n## ARTICLE II - THE LOAN\n\nSubject to the terms of this Agreement, the Lender agrees to advance to the Borrower a term loan in the principal amount of $140,619.58 (the \"Loan\"). The Loan shall bear interest on the outstanding principal balance at a fixed annual rate of 9.1%, computed on the basis of a 360-day year, and shall be repayable in 48 equal monthly installments, with the final installment due on February 11, 2026 (the \"Maturity Date\").\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee."
+    },
+    {
+      "file": "page-105.png",
+      "label": "Loan agreement - Bluecrest National Bank, p.3: covenants (rough scan)",
+      "question": "This is one page of a multi-page loan agreement. Answer only from this page. Extract these fields exactly as printed: Late charge; Governing law state. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Late charge": "3%",
+        "Governing law state": "Oregon"
+      },
+      "ocr": "Page3of3\nBLUECRESTNATIONALBANK\nARTICLEV-COVENANTSANDDEFAULT\nAnyinstallmentnotreceivedwithintendaysof itsduedateshall incuralatecharge\nequalto3%oftheoverdueamount.ThisAgreementshallbegovernedby and\nconstruedinaccordancewiththelawsoftheStateofOregon,withoutregardtoits\nconflictoflawsprinciples.\nTheBorrowerrepresentsthatthefinancialstatementsdeliveredtotheLenderfairly\npresent itsfinancial condition and that nomaterial adverse changehasoccurred\nsincethedateofthosestatements.\nTimeisoftheessencewithrespecttoeveryobligationoftheBorrowerunderthis\nAgreementandeachrelatedloandocumentexecutedinconnectionherewith.\nTheBorrowershallmaintaininsuranceonthecollateralinamountsandagainstrisks\ncustomarily carried by companies engaged in similarbusinesses,naming theLender\naslosspayee.",
+      "parse": "**BLUECREST NATIONAL BANK** Page 3 of 3\n\n## ARTICLE V - COVENANTS AND DEFAULT\n\nAny installment not received within ten days of its due date shall incur a late charge equal to 3% of the overdue amount. This Agreement shall be governed by and construed in accordance with the laws of the State of Oregon, without regard to its conflict of laws principles.\n\nThe Borrower represents that the financial statements delivered to the Lender fairly present its financial condition and that no material adverse change has occurred since the date of those statements.\n\nTime is of the essence with respect to every obligation of the Borrower under this Agreement and each related loan document executed in connection herewith.\n\nThe Borrower shall maintain insurance on the collateral in amounts and against risks customarily carried by companies engaged in similar businesses, naming the Lender as loss payee."
+    },
+    {
+      "file": "page-106.png",
+      "label": "Receipt - Bindery Books (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$15.15",
+        "Store name": "Bindery Books",
+        "Card last four digits": "7030"
+      },
+      "ocr": "BINDERY BOOKS\nDuluth\uff0cMN\nMay 22\uff0c2026 9:33 AM\n3.20\nDay-old bagelsx3\n3.50\nSticker pack\n3.20\nCoffee\uff0cdrip\uff0clarge\n5.25\nPie slice\uff0ccherry\n$15.15\nTOTAL\n****7030\nAPPROVED\nVISA\nThank you!",
+      "parse": "| \\multicolumn{2}{c}{BINDERY BOOKS} |  |\n|---|---|\n| \\multicolumn{2}{c}{Duluth, MN} |  |\n| May 22, 2026 | 9:33 AM |\n| Day-old bagels x3 | 3.20 |\n| Sticker pack | 3.50 |\n| Coffee, drip, large | 3.20 |\n| Pie slice, cherry | 5.25 |\n| TOTAL | $15.15 |\n| VISA \\*\\*\\*\\*7030 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-107.png",
+      "label": "Invoice - Quarry Textiles Ltd. (paid stamp) (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Vendor name; PO number; Total due. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Vendor name": "Quarry Textiles Ltd.",
+        "PO number": "PO-18498",
+        "Total due": "$3,681.66"
+      },
+      "ocr": "QUARRY TEXTILES LTD.\nTAXINVOICE\n2355Commerce Way,Erie,PA16501\nBillto\nInvoice no.\nBrightwell OfficeSupply\nINV-96837\nInvoice date\nJune27,2025\nDue date\nAugust16,2025\nPO number\nPO-18498\nDescription\nQty\nUnit price\nCopy paper,letter,10-reamcase\nAmount\n6\n42.50\nBreakroom coffee,5 Ib\n255.00\n5\n46.75\nWhiteboardmarkers,12-pack\n233.75\n7\n13.50\nErgonomicdeskchair\n94.50\n11\n189.00\nFolding table,6ft\n2,079.00\n10\n78.50\n785.00\nSubtotal\n$3,447.25\nTax (6.8%)\n$234.41\nTotal due\n$3,681.66\nPAID\nPaymentterms:Net45\nMakech\neckspayabletoQuarryTextilesLtd..",
+      "parse": "TAX INVOICE\n\n**QUARRY TEXTILES LTD.**\n\n2355 Commerce Way, Erie, PA 16501\n\nBill to\n**Brightwell Office Supply**\n\nInvoice no. **INV-96837**\nInvoice date **June 27, 2025**\nDue date **August 16, 2025**\nPO number **PO-18498**\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Copy paper, letter, 10-ream case | 6 | 42.50 | 255.00 |\n| Break room coffee, 5 lb | 5 | 46.75 | 233.75 |\n| Whiteboard markers, 12-pack | 7 | 13.50 | 94.50 |\n| Ergonomic desk chair | 11 | 189.00 | 2,079.00 |\n| Folding table, 6 ft | 10 | 78.50 | 785.00 |\n\nSubtotal $3,447.25\nTax (6.8%) $234.41\nTotal due $3,681.66\n\nPAID\n\nPayment terms: Net 45 Make checks payable to Quarry Textiles Ltd.."
+    },
+    {
+      "file": "page-108.png",
+      "label": "Work order WO-2026-4942 (rough scan)",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Total steps; Due date; Priority; Completed (checked) steps. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total steps": "7",
+        "Due date": "January 12, 2026",
+        "Priority": "Emergency",
+        "Completed (checked) steps": "6"
+      },
+      "ocr": "WORK ORDER\nWO-2026-4942\nOakhavenFacilities\nAssigned to\nGavinCastellano\nAsset\nPriority\nAHU-13\nEmergency\nDue date\nJanuary 12, 2026\nChecklist(checked=complete):\nPhotograph nameplate\nClearintake screen\nCheck alignment\nUpdateservicetag\nTestrun 15minutes\nIsolatepower atpanel\nTorque mounting bolts\nTechnician notes:parts on hand,no downtime expected.",
+      "parse": "# WORK ORDER WO-2026-4942\n\nOakhaven Facilities\n\n| Assigned to | Gavin Castellano | Asset | AHU-13 |  |\n|---|---|---|---|---|\n| Priority | Emergency |  |  |  |\n| Due date | January 12, 2026 |  |  |  |\n\nChecklist (checked = complete):\n\nPhotograph nameplate\n\nClear intake screen\n\nCheck alignment\n\nUpdate service tag\n\nTest run 15 minutes\n\nIsolate power at panel\n\nTorque mounting bolts\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-109.png",
+      "label": "Work order WO-2022-1726",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Due date; Completed (checked) steps; Total steps; Priority. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Due date": "November 13, 2026",
+        "Completed (checked) steps": "2",
+        "Total steps": "8",
+        "Priority": "Emergency"
+      },
+      "ocr": "WORK ORDER\nWO-2022-1726\nLarkspur Facilities\nAssigned to\nRosa Boone\nAsset\nAHU-06\nPriority\nEmergency\nDue date\nNovember 13,2026\nChecklist (checked = complete):\nTorque mounting bolts\nUpdateservicetag\nReplacewornbelt\nIsolate power at panel\nVerifyguardreinstalled\nClear intake screen\nGrease bearings\nCheck alignment\nTechnician notes: parts on hand, no downtime expected.",
+      "parse": "# WORK ORDER\n\n**WO-2022-1726**\n\nLarkspur Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\nRosa Boone\n\nEmergency\n\nNovember 13, 2026\n\nAsset\n\nAHU-06\n\nChecklist (checked = complete):\n\nTorque mounting bolts\n\nUpdate service tag\n\nReplace worn belt\n\nIsolate power at panel\n\nVerify guard reinstalled\n\nClear intake screen\n\nGrease bearings\n\nCheck alignment\n\nTechnician notes: parts on hand, no downtime expected."
+    },
+    {
+      "file": "page-110.png",
+      "label": "Service record - Oakhaven Auto Service (hard scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Odometer; Service date; Total; Vehicle. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Odometer": "127,807 mi",
+        "Service date": "January 6, 2026",
+        "Total": "$305.42",
+        "Vehicle": "2022 Civic"
+      },
+      "ocr": "OAKHAVENAUTOSERVICE\nServicerecord\nOrder no.\nRO-18913\nVehicle\n2022Civic\nOdometer\n127,807 mi\nServicedate\nJanuary 6,2026\n$107.47\nOil andfilterchange\n$49.80\nCabinairfilter\n$148.15\nCoolantflush\n$305.42\nTotal",
+      "parse": "OAKHAVEN AUTO SERVICE\n\nService record\n\n| Vehicle | 2022 Civic | Order no. | RO-18913 |\n|---|---|---|---|\n| Odometer | 127,807 mi |  |  |\n| Service date | January 6, 2026 |  |  |\n| Oil and filter change |  |  | $107.47 |\n| Cabin air filter |  |  | $49.80 |\n| Coolant flush |  |  | $148.15 |\n| Total |  |  | $305.42 |"
+    },
+    {
+      "file": "page-111.png",
+      "label": "Work order WO-2021-7107 (rough scan)",
+      "question": "This is a maintenance work order; checked boxes are complete. Extract these fields exactly as printed: Total steps; Completed (checked) steps; Work order number; Priority. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total steps": "5",
+        "Completed (checked) steps": "4",
+        "Work order number": "WO-2021-7107",
+        "Priority": "High"
+      },
+      "ocr": "WORK ORDER\nWO-2021-7107\nBrightwell Facilities\nAssigned to\nColin Novak\nAsset\nAHU-18\nPriority\nHigh\nDue'date\nApril 1, 2026\nChecklist(checked=complete):\nTestrun15minutes\nUpdate service tag\nIsolatepoweratpanel\nVerify.guardreinstalled\nPhotographnameplate\nTechnician notes:parts on hand,no downtime expected.",
+      "parse": "# WORK ORDER WO-2021-7107\n\nBrightwell Facilities\n\nAssigned to\n\nPriority\n\nDue date\n\n**Colin Novak**\n\nHigh\n\nApril 1, 2026\n\nAsset\n\nAHU-18\n\nChecklist (checked = complete):\n\nTechnician notes: parts on hand, no downtime expected.\n\nTest run 15 minutes\n\nUpdate service tag\n\nIsolate power at panel\n\nVerify guard reinstalled\n\nPhotograph nameplate"
+    },
+    {
+      "file": "page-112.png",
+      "label": "Lab report - Larkspur Clinical Laboratory (rough scan)",
+      "question": "This is a scanned record document. Extract these fields exactly as printed: Patient; Collected; Glucose result; Accession. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Patient": "Rosa Iyer",
+        "Collected": "July 11, 2026",
+        "Glucose result": "106",
+        "Accession": "ACC-300305"
+      },
+      "ocr": "LARKSPUR CLINICALLABORATORY\nLaboratoryreport\nAccession\nACC-300305\nPatient\nRosa lyer\nDateofbirth\nAugust1,1977\nCollected\nJuly 11,2026\nUnits.\nReference\nTest\nResult\n106\nmg/dL\n70-99\nGlucose\n15.6\n7p/6\n13.5-17.5\nHemoglobin\n6.1\n10~3/uL\n4.5-11.0\nWBC\n216\nmg/dL\n<200\nCholesterol",
+      "parse": "LARKSPUR CLINICAL LABORATORY\n\nLaboratory report\n\nPatient Rosa Iyer\n\nDate of birth August 1, 1977\n\nCollected July 11, 2026\n\n| **Test** | **Result** | **Units** | **Reference** |\n|---|---|---|---|\n| Glucose | 106 | mg/dL | 70-99 |\n| Hemoglobin | 15.6 | g/dL | 13.5-17.5 |\n| WBC | 6.1 | 10^3/uL | 4.5-11.0 |\n| Cholesterol | 216 | mg/dL | < 200 |\n\nAccession ACC-300305"
+    },
+    {
+      "file": "page-113.png",
+      "label": "Invoice - Redbud Equipment Rental",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Vendor name; PO number; Invoice date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Vendor name": "Redbud Equipment Rental",
+        "PO number": "PO-63043",
+        "Invoice date": "December 11, 2025"
+      },
+      "ocr": "REDBUDEQUIPMENTRENTAL\nTAX INVOICE\n5640FoundryRd,Columbus,OH43219\nInvoice no.\nINV-74186\nBill to\nIvan Kaminski LLP\nInvoice date\nDecember11,202\nDue date\nDecember26,202\nPO number\nPO-63043\nDescription\nQty\nUnit price\nAmount\nShipping labels, 4x6, 8 rolls\n8\n32.20\n257.60\nWhiteboardmarkers,12-pack\n3\n13.50\n40.50\nErgonomic desk chair\n4\n189.00\n756.00\nToner cartridge, black\n9\n118.00\n1,062.00\nHDMI cable,10 ft,10-pack\n8\n55.90\n447.20\nCopy paper,letter,10-ream case\n4\n42.50\n170.00\nSubtotal\n$2,733.30\nTax (7.3%)\n$199.53\nTotal due\n$2,932.83\nPayment terms:Net 15.Make checks payable to Redbud Equipment Rental.",
+      "parse": "**REDBUD EQUIPMENT RENTAL** TAX INVOICE\n\n5640 Foundry Rd, Columbus, OH 43219\n\nBill to\n\n**Ivan Kaminski LLP**\n\nInvoice no. INV-74186\n\nInvoice date December 11, 2022\n\nDue date December 26, 2022\n\nPO number PO-63043\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Shipping labels, 4x6, 8 rolls | 8 | 32.20 | 257.60 |\n| Whiteboard markers, 12-pack | 3 | 13.50 | 40.50 |\n| Ergonomic desk chair | 4 | 189.00 | 756.00 |\n| Toner cartridge, black | 9 | 118.00 | 1,062.00 |\n| HDMI cable, 10 ft, 10-pack | 8 | 55.90 | 447.20 |\n| Copy paper, letter, 10-ream case | 4 | 42.50 | 170.00 |\n\nSubtotal $2,733.30\n\nTax (7.3%) $199.53\n\nTotal due $2,932.83\n\nPayment terms: Net 15. Make checks payable to Redbud Equipment Rental."
+    },
+    {
+      "file": "page-114.png",
+      "label": "Invoice - Northwind Logistics LLC (paid stamp) (rough scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Invoice number; Total due; Due date; Invoice date. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Invoice number": "INV-88596",
+        "Total due": "$3,339.32",
+        "Due date": "April 4, 2026",
+        "Invoice date": "March 17, 2026"
+      },
+      "ocr": "NORTHWINDLOGISTICSLLC\nINVOICE\nBill to\nInvoice no.\nINV-88596\nMeridianTextilesLtd.\nInvoice date\nMarch17,2026\nDue date\nApril 4,2026\nPO number\nPO-11069\nDescription\nQty\nUnit price\nAmount\nErgonomicdeskchair\n4\n189.00\n756.00\nCopypaper,letter,10-reamcase\n6.\n42.50\n255.00\nPackingtape,36-rollcase\n6\n51.50\n309.00\nSteelshelvingunit,72in\n4\n244.00\n976.00\nFolding table,6ft\n4\n78.50\n314.00\nNitrile gioves, case of.1000\n7\n64.80\n453.60\nSubtotal\n$3,063.60\nTax (9.0%)\n$275.72\nTotal due\n$3,339.32\nPAID\nPayment terms:Net 15.Make checks payable to Northwind Logistics LLC.",
+      "parse": "**NORTHWIND LOGISTICS LLC**\n\nINVOICE\n\nBill to\n\nMeridian Textiles Ltd.\n\nInvoice no. INV-88596\n\nInvoice date March 17, 2026\n\nDue date April 4, 2026\n\nPO number PO-11069\n\n| **Description** | **Qty** | **Unit price** | **Amount** |\n|---|---|---|---|\n| Ergonomic desk chair | 4 | 189.00 | 756.00 |\n| Copy paper, letter, 10-ream case | 6 | 42.50 | 255.00 |\n| Packing tape, 36-roll case | 6 | 51.50 | 309.00 |\n| Steel shelving unit, 72 in | 4 | 244.00 | 976.00 |\n| Folding table, 6 ft | 4 | 78.50 | 314.00 |\n| Nitrile gloves, case of 1000 | 7 | 64.80 | 453.60 |\n\nSubtotal $3,063.60\n\nTax (9.0%) $275.72\n\nTotal due $3,339.32\n\nPAID\n\nPayment terms: Net 15. Make checks payable to Northwind Logistics LLC."
+    },
+    {
+      "file": "page-115.png",
+      "label": "Receipt - Union Diner (photo)",
+      "question": "This is a photo of a paper receipt. Extract these fields exactly as printed: Total; Store name; Card last four digits. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Total": "$21.85",
+        "Store name": "Union Diner",
+        "Card last four digits": "9794"
+      },
+      "ocr": "UNION DINER\nSalem,OR\n0ctober 25\uff0c2026\n9:34AM\nHouse salad\n8.50\nCarnitastacox2\n6.90\nWaffle cone\uff0cdouble\n6.45\nTOTAL\n$21.85\nVISA\n****9794\nAPPROVED\nThank you!",
+      "parse": "| \\multicolumn{2}{c}{UNION DINER} |  |\n|---|---|\n| \\multicolumn{2}{c}{Salem, OR} |  |\n| October 25, 2026 | 9:34 AM |\n| House salad | 8.50 |\n| Carnitas taco x2 | 6.90 |\n| Waffle cone, double | 6.45 |\n| TOTAL | $21.85 |\n| VISA \\*\\*\\*\\*9794 APPROVED |  |\n| Thank you! |  |"
+    },
+    {
+      "file": "page-116.png",
+      "label": "Order - Pinnacle Print Works (hard scan)",
+      "question": "This is a scanned business document. Extract these fields exactly as printed: Ship by date; Ship-to city; Order total. Answer with one line per field in the form \"Field name: value\". If a field is not on the document, write \"not found\".",
+      "fields": {
+        "Ship by date": "November 10, 2026",
+        "Ship-to city": "Mesa",
+        "Order total": "$7,671.70"
+      },
+      "ocr": "ORDERCONFIRMATION\nSO-959928\nSupplier\nPinnaclePrintWorks\nOrderdate\nNovember1,2026\nShip by\nNovember10,2026\nStatus\nProcessing\nBill to\n3755PikeStreet,Provo,UT84601\nShip to\n8451CommerceWay,Mesa,AZ85201\nItem\nDescription\nQty\nUnit\nAmount\nHSE-077\nHydraulic hose, 2 m\n58\n54.10\n3,137.80\nFST-1108\nFastenerkit,M6\n51\n9.80\n499.80\nALU-3300\nAluminumbracket,anodized\n12\n22.40\n268.80\nVLV-208\nCheck valve,brass\n77\n48.90\n3,765.30\nTotal units: 198\nOrder total\n$7,671.70\nQuestions?Call(555)0121-2093-orwrite toorders@pinnacle.example.",
+      "parse": "# ORDER CONFIRMATION\n\n**SO-959928**\n\nSupplier **Pinnacle Print Works**\n\nOrder date **November 1, 2026**\n\nShip by **November 10, 2026**\n\nStatus **Processing**\n\nBill to 3755 Pike Street, Provo, UT 84601\n\nShip to 8451 Commerce Way, Mesa, AZ 85201\n\n| **Item** | **Description** | **Qty** | **Unit** | **Amount** |\n|---|---|---|---|---|\n| HSE-077 | Hydraulic hose, 2 m | 58 | 54.10 | 3,137.80 |\n| FST-1108 | Fastener kit, M6 | 51 | 9.80 | 499.80 |\n| ALU-3300 | Aluminum bracket, anodized | 12 | 22.40 | 268.80 |\n| VLV-208 | Check valve, brass | 77 | 48.90 | 3,765.30 |\n\nTotal units: 198\n\nOrder total $7,671.70\n\nQuestions? Call (555) 0121-2093 or write to orders@pinnacle.example."
+    }
+  ]
+}

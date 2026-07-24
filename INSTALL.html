@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Bake-off</title>
+<style>
+  :root{--bg:#0b0e14;--panel:#141925;--panel2:#1b2233;--line:#2a3346;--txt:#eef1f7;--muted:#8b97ad;
+        --pass:#2ec27e;--fail:#e5534b;--accent:#34b6c4;--radius:16px;}
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--txt);font:15px/1.6 'Inter',system-ui,'Segoe UI',Roboto,sans-serif;
+       background:radial-gradient(1200px 600px at 50% -10%,#12202b 0%,var(--bg) 60%);}
+  .wrap{max-width:760px;margin:0 auto;padding:36px 20px 80px;}
+  h1{font-size:32px;margin:10px 0 6px;}
+  h1 .tld{color:var(--accent);}
+  .lead{color:var(--muted);font-size:16px;margin:0 0 8px;max-width:60ch;}
+  h2{font-size:20px;margin:42px 0 10px;display:flex;align-items:center;gap:12px;}
+  .stepnum{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+           font-size:14px;font-weight:800;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));
+           background:color-mix(in srgb,var(--accent) 12%,transparent);}
+  p{margin:10px 0;max-width:66ch;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:16px 0;}
+  .cmd{position:relative;background:#0a0f18;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;
+       font:13.5px/1.6 ui-monospace,Menlo,Consolas,monospace;color:#cfe6ea;overflow-x:auto;white-space:pre;cursor:pointer;}
+  .cmd:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));}
+  .cmd::after{content:'click to select';position:absolute;top:8px;right:12px;font:11px Inter,system-ui,sans-serif;color:var(--muted);}
+  .cmd.copied::after{content:'copied!';color:var(--pass);}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;}
+  .ok{color:var(--pass);font-weight:700;}
+  .muted{color:var(--muted);}
+  .tip{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--accent) 8%,transparent);
+       border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:12px;padding:13px 15px;margin:14px 0;font-size:14px;}
+  .tip b{color:var(--txt);}
+  .warn{border-color:color-mix(in srgb,#e5b94b 45%,var(--line));background:color-mix(in srgb,#e5b94b 8%,transparent);}
+  code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:13px;}
+  a{color:var(--accent);}
+  .foot{margin-top:52px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px;}
+  ul{margin:8px 0;padding-left:22px;} li{margin:6px 0;}
+  @media (max-width:600px){ h1{font-size:26px;} .wrap{padding:24px 14px 60px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="muted" style="text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:600;margin:0">Setup guide</p>
+  <h1>Install <span class="tld">Bake-off</span></h1>
+  <p class="lead">Put three AI models head to head on your own computer and see which one is the most accurate, the fastest, and the cheapest to run. About 10 minutes, all free, no accounts. If you can copy and paste, you can do this.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0"><span class="stepnum">✓</span>What you need</h2>
+    <table>
+      <tr><th>Thing</th><th>Details</th></tr>
+      <tr><td><b>A computer for the app</b></td><td>Linux (Ubuntu, Debian, Fedora, Mint) is the main path - the app is tiny, so any lab box works, even a GPU machine. On a Windows jump host you usually only need a <b>browser</b>: install Bake-off on a Linux box and open its address. Windows can also run it natively - paste <code>irm https://raw.githubusercontent.com/jdbarzy/bake-off/HEAD/get.ps1 | iex</code> into PowerShell (needs Python 3, no admin) - or use WSL2 with the Linux command.</td></tr>
+      <tr><td><b>A terminal, twice</b></td><td>You will paste exactly two commands, once each. Everything after that is clicking in a web browser.</td></tr>
+      <tr><td><b>Disk space</b></td><td>About 5 GB for the three starter models.</td></tr>
+      <tr><td><b>A GPU <span class="muted">(optional)</span></b></td><td>An NVIDIA graphics card makes models fast. Without one the starter models still work, just slower.</td></tr>
+    </table>
+  </div>
+
+  <h2><span class="stepnum">1</span>Install Bake-off</h2>
+  <p>Open a terminal and paste this one line, then press Enter:</p>
+  <div class="cmd">curl -fsSL https://raw.githubusercontent.com/jdbarzy/bake-off/HEAD/get.sh | bash</div>
+  <p>It downloads Bake-off to your home folder and sets it up as an always-on app that survives reboots. When it finishes it prints the address to open - something like <code>http://192.168.1.50:15600/</code>. Write that down; that address works from your phone, laptop, anything on your network.</p>
+
+  <h2><span class="stepnum">2</span>Get some models</h2>
+  <p>Bake-off measures models; it does not include them. On each machine with an NVIDIA GPU, run the provisioner from the Bake-off folder:</p>
+  <div class="cmd">bash ~/bake-off/mwboot.sh</div>
+  <p>It installs <a href="https://docs.vllm.ai">vLLM</a>, picks a model that fits each GPU, serves it over the standard OpenAI <code>/v1</code> API with a swap agent beside it, and prints the exact settings to paste into the app. The first model download is a few GB, so give it a few minutes.</p>
+  <div class="tip"><div><b>Why vLLM?</b> It is the same serving engine used in production GPU clusters, so what you measure here is what you would ship. And with the swap agent in place, the app's model catalog can change what each GPU serves with one tap.</div></div>
+
+  <h2><span class="stepnum">3</span>Open the app and run</h2>
+  <p>Open the address from step 1 in any browser. From here it is three clicks, and the screen guides each one:</p>
+  <ul>
+    <li><b>Power on</b> - press the glowing power button. All three models should turn green ("ready").</li>
+    <li><b>Load task</b> - pick a ready-made question card, like General knowledge.</li>
+    <li><b>Press Play</b> - watch the three models race through the questions, then read the scoreboard and the recommendation.</li>
+  </ul>
+  <p>That is the whole loop. Load a different card, or build your own questions, and run it again.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0"><span class="stepnum">＋</span>Got a setup file?</h2>
+    <p>If someone already configured a Bake-off and exported its setup, you can skip configuring anything: open the app, press the <b>gear</b> on the control bar, go to <b>Move setup</b>, and import their file. Their model endpoints, comparison cards, and question sets all appear here.</p>
+  </div>
+
+  <h2><span class="stepnum">?</span>If something does not work</h2>
+  <table>
+    <tr><th>Symptom</th><th>Fix</th></tr>
+    <tr><td>A model shows <span style="color:var(--fail)">not reachable</span></td><td>The model server is not running on that machine. Re-run <code>bash ~/bake-off/mwboot.sh</code> there, then press the re-check arrows in the app.</td></tr>
+    <tr><td>A model shows "not on this server"</td><td>Open the model's dots menu and pick one from the list the server actually offers, or use "Switch this server to another model" - the swap agent loads it for you.</td></tr>
+    <tr><td>The address does not load from another device</td><td>Both devices must be on the same network. If it still fails, a firewall is blocking port 15600: <code>sudo ufw allow 15600</code> on the Bake-off machine.</td></tr>
+    <tr><td>Answers are very slow</td><td>Check the model fits the GPU - a model too big for its card falls back to CPU offload. Pick a smaller one from the model catalog.</td></tr>
+    <tr><td>Want it gone</td><td><code>~/bake-off/uninstall.sh</code> removes the app and its services. Delete the <code>~/bake-off</code> folder after, if you like. Downloaded models live in <code>~/.cache/huggingface</code> on each GPU machine.</td></tr>
+  </table>
+
+  <div class="tip warn"><div><b>Privacy note:</b> everything runs on your machines. Questions, answers, and results never leave your network unless you share them.</div></div>
+
+  <p class="foot">Bake-off - a speed test for local AI. MIT licensed. To move this whole setup to another machine later: gear &gt; Move setup &gt; Export.</p>
+</div>
+
+<script>
+  // click a command block to select it (works offline; copy is then ctrl+c / long-press)
+  document.querySelectorAll('.cmd').forEach(function(el){
+    el.addEventListener('click', function(){
+      var r=document.createRange(); r.selectNodeContents(el);
+      var s=getSelection(); s.removeAllRanges(); s.addRange(r);
+      if(navigator.clipboard){ navigator.clipboard.writeText(el.textContent.trim()).then(function(){
+        el.classList.add('copied'); setTimeout(function(){el.classList.remove('copied');},1600); }).catch(function(){}); }
+    });
+  });
+</script>
+</body>
+</html>
